@@ -54,8 +54,8 @@ class Article: Object, Decodable {
         link = try container.decode(String.self, forKey: .link)
         date = try container.decode(Date.self, forKey: .date)
         modified = try container.decode(Date.self, forKey: .modified)
-        author = try container.decode(Author.self, forKey: .author)
-        featuredImage = try container.decode(Image.self, forKey: .featuredImage)
+        author = try container.decodeIfPresent(Author.self, forKey: .author)
+        featuredImage = try container.decodeIfPresent(Image.self, forKey: .featuredImage)
         
         let categoriesArray = try container.decode([Category].self, forKey: .categories)
         categories.append(objectsIn: categoriesArray)
