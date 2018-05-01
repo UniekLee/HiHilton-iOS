@@ -18,6 +18,7 @@
 		9B15941F2097635A00B8B923 /* ListArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B15941E2097635A00B8B923 /* ListArticlesModel.swift */; };
 		9B1594212097689200B8B923 /* ListArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1594202097689200B8B923 /* ListArticlesViewModel.swift */; };
 		9BA27B1F2098A5A800DB2EAC /* ReadArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B1E2098A5A800DB2EAC /* ReadArticleViewController.swift */; };
+		9BA27B212098BAAB00DB2EAC /* ReadArticleGalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B202098BAAB00DB2EAC /* ReadArticleGalleryImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9B15941E2097635A00B8B923 /* ListArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListArticlesModel.swift; sourceTree = "<group>"; };
 		9B1594202097689200B8B923 /* ListArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListArticlesViewModel.swift; sourceTree = "<group>"; };
 		9BA27B1E2098A5A800DB2EAC /* ReadArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadArticleViewController.swift; sourceTree = "<group>"; };
+		9BA27B202098BAAB00DB2EAC /* ReadArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				9BA27B1E2098A5A800DB2EAC /* ReadArticleViewController.swift */,
+				9BA27B202098BAAB00DB2EAC /* ReadArticleGalleryImageCollectionViewCell.swift */,
 			);
 			path = ReadArticle;
 			sourceTree = "<group>";
@@ -220,12 +223,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Harcourts Hilton/Pods-Harcourts Hilton-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -263,6 +268,7 @@
 				9B1594212097689200B8B923 /* ListArticlesViewModel.swift in Sources */,
 				9BA27B1F2098A5A800DB2EAC /* ReadArticleViewController.swift in Sources */,
 				9B15940B2097519B00B8B923 /* ArticlesRouter.swift in Sources */,
+				9BA27B212098BAAB00DB2EAC /* ReadArticleGalleryImageCollectionViewCell.swift in Sources */,
 				9B1593FA2097239000B8B923 /* ListArticlesViewController.swift in Sources */,
 				9B1593F82097239000B8B923 /* AppDelegate.swift in Sources */,
 				9B15941F2097635A00B8B923 /* ListArticlesModel.swift in Sources */,
@@ -413,10 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLD24BM42Z;
 				INFOPLIST_FILE = "Harcourts Hilton/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unieklee.Harcourts-Hilton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -432,10 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLD24BM42Z;
 				INFOPLIST_FILE = "Harcourts Hilton/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unieklee.Harcourts-Hilton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
