@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-u6-bYj">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-u6-bYj">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egJ-1P-Agj">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="262"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Article title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGB-Ag-jM8">
                                                 <rect key="frame" x="16" y="20" width="343" height="33.5"/>
@@ -31,7 +31,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-eP-W9s">
-                                                <rect key="frame" x="20" y="221.5" width="339" height="361.5"/>
+                                                <rect key="frame" x="20" y="221.5" width="339" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -94,11 +94,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="egJ-1P-Agj" firstAttribute="top" secondItem="zVR-u6-bYj" secondAttribute="top" id="5WS-vA-dqv"/>
-                                    <constraint firstItem="egJ-1P-Agj" firstAttribute="height" secondItem="zVR-u6-bYj" secondAttribute="height" priority="999" id="C7W-22-Elj"/>
                                     <constraint firstItem="egJ-1P-Agj" firstAttribute="width" secondItem="zVR-u6-bYj" secondAttribute="width" id="Y01-fE-jbV"/>
                                     <constraint firstAttribute="bottom" secondItem="egJ-1P-Agj" secondAttribute="bottom" id="jJR-K3-6FZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="egJ-1P-Agj" secondAttribute="trailing" constant="1.5" id="kCa-fh-qq9"/>
-                                    <constraint firstItem="egJ-1P-Agj" firstAttribute="leading" secondItem="zVR-u6-bYj" secondAttribute="leading" constant="-0.5" id="q8j-Ne-78g"/>
+                                    <constraint firstAttribute="trailing" secondItem="egJ-1P-Agj" secondAttribute="trailing" id="kCa-fh-qq9"/>
+                                    <constraint firstItem="egJ-1P-Agj" firstAttribute="leading" secondItem="zVR-u6-bYj" secondAttribute="leading" id="q8j-Ne-78g"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
