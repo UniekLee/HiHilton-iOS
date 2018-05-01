@@ -44,4 +44,8 @@ class ListArticlesViewModel {
     func title(for item: Int) -> String {
         return articles[item].title
     }
+    
+    func article(for item: Int) -> Article {
+        return articles[item]
+    }
 }

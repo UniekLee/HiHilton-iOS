@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        guard let splitViewController = window?.rootViewController as? UISplitViewController,
+            let masterNav = splitViewController.viewControllers.first as? UINavigationController,
+            let listArticlesVC = masterNav.topViewController as? ListArticlesViewController,
+            let detailNav = splitViewController.viewControllers.last as? UINavigationController,
+            let readArticlesVC = detailNav.topViewController as? ReadArticleViewController
+            else { fatalError() }
+        
+//        let firstArticle = listArticlesVC.viewModel.article(for: 0)
+//        readArticlesVC.article = firstArticle
+        readArticlesVC.navigationItem.leftItemsSupplementBackButton = true
+        readArticlesVC.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        listArticlesVC.delegate = readArticlesVC
         return true
     }
 

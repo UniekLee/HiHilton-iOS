@@ -9,8 +9,13 @@
 import UIKit
 import Alamofire
 
+protocol ArticleSelectionDelegate: class {
+    func articleSelected(_ newArticle: Article)
+}
+
 class ListArticlesViewController: UITableViewController {
     var viewModel: ListArticlesViewModel
+    weak var delegate: ArticleSelectionDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         viewModel = ListArticlesViewModel()
@@ -20,6 +25,7 @@ class ListArticlesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        splitViewController?.delegate = self
     }
     
     @IBAction func pulledToRefresh(_ sender: UIRefreshControl) {
@@ -38,6 +44,22 @@ class ListArticlesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = self.viewModel.title(for: indexPath.row)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedArticle = viewModel.article(for: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.articleSelected(selectedArticle)
+        if let readArticleVC = delegate as? ReadArticleViewController,
+            let readArticleNav = readArticleVC.navigationController {
+            splitViewController?.showDetailViewController(readArticleNav, sender: nil)
+        }
+    }
+}
+
+extension ListArticlesViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
 
