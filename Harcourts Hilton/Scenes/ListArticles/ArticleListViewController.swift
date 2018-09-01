@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticleListViewController.swift
 //  Harcourts Hilton
 //
 //  Created by Lee Watkins on 2018/04/30.
@@ -13,12 +13,12 @@ protocol ArticleSelectionDelegate: class {
     func articleSelected(_ newArticle: Article)
 }
 
-class ListArticlesViewController: UITableViewController {
-    var viewModel: ListArticlesViewModel
+class ArticleListViewController: UITableViewController {
+    var viewModel: ArticleListViewModel
     weak var delegate: ArticleSelectionDelegate?
     
     required init?(coder aDecoder: NSCoder) {
-        viewModel = ListArticlesViewModel()
+        viewModel = ArticleListViewModel()
         super.init(coder: aDecoder)
         viewModel.delegate = self
     }
@@ -57,13 +57,13 @@ class ListArticlesViewController: UITableViewController {
     }
 }
 
-extension ListArticlesViewController: UISplitViewControllerDelegate {
+extension ArticleListViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
 }
 
-extension ListArticlesViewController: ListArticlesViewModelProtocol {
+extension ArticleListViewController: ListArticlesViewModelProtocol {
     func reloadArticlesSucceeded() {
         self.refreshControl?.endRefreshing()
         self.tableView.reloadData()

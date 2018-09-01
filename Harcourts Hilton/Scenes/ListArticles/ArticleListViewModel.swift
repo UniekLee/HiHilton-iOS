@@ -1,5 +1,5 @@
 //
-//  ListArticlesViewModel.swift
+//  ArticleListViewModel.swift
 //  Harcourts Hilton
 //
 //  Created by Lee Watkins on 2018/04/30.
@@ -14,8 +14,8 @@ protocol ListArticlesViewModelProtocol {
     func reloadArticlesFailed(with error: Error)
 }
 
-class ListArticlesViewModel {
-    let model: ListArticlesModel
+class ArticleListViewModel {
+    let model: ArticleListModel
     var delegate: ListArticlesViewModelProtocol?
     var articles: [Article] = []
     var numberOfItems: Int {
@@ -23,7 +23,7 @@ class ListArticlesViewModel {
     }
     
     init() {
-        self.model = ListArticlesModel()
+        self.model = ArticleListModel()
         model.getArticles(completion: handleDataFetch(with:error:))
     }
     

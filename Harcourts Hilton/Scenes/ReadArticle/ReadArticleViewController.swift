@@ -12,6 +12,7 @@ import Kingfisher
 class ReadArticleViewController: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleContent: UILabel!
+    @IBOutlet weak var articleGalleryView: UIView!
     @IBOutlet weak var articleGallery: UICollectionView!
     
     var article: Article? {
@@ -37,6 +38,7 @@ class ReadArticleViewController: UIViewController {
             articleContent.attributedText = NSAttributedString(string: content, attributes: [kCTParagraphStyleAttributeName as NSAttributedStringKey : contentStyle])
         }
         articleGallery.reloadData()
+        articleGalleryView.isHidden = article?.images.count == 0
     }
 
 }
