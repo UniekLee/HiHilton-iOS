@@ -10,20 +10,20 @@ import Foundation
 import Alamofire
 
 enum ArticlesRouter: URLRequestConvertible {
-    case readArticles
+    case listArticles
     
     static let baseURLString = "http://localhost:8888/hilton"
     static let baseRESTString = "wp-json/swiftypress/v2"
     
     var method: HTTPMethod {
         switch self {
-        case .readArticles: return .get
+        case .listArticles: return .get
         }
     }
     
     var path: String {
         switch self {
-        case .readArticles:
+        case .listArticles:
             return "/articles"
         }
     }

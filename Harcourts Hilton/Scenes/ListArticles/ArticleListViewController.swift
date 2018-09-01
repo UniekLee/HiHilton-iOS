@@ -50,7 +50,7 @@ class ArticleListViewController: UITableViewController {
         let selectedArticle = viewModel.article(for: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.articleSelected(selectedArticle)
-        if let readArticleVC = delegate as? ReadArticleViewController,
+        if let readArticleVC = delegate as? SingleArticleViewController,
             let readArticleNav = readArticleVC.navigationController {
             splitViewController?.showDetailViewController(readArticleNav, sender: nil)
         }

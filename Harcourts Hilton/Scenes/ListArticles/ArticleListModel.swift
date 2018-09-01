@@ -46,7 +46,7 @@ class ArticleListModel {
     }
     
     func updateArticles(completion: @escaping ([Article], Error?) -> Void) {
-        Alamofire.request(ArticlesRouter.readArticles).validate().responseData { [weak self] (response) in
+        Alamofire.request(ArticlesRouter.listArticles).validate().responseData { [weak self] (response) in
             self?.lastDataRetrieval = Date()
             switch response.result {
             case .success(let data):

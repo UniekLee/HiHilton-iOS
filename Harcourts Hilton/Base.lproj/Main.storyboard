@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Read Article View Controller-->
+        <!--Single Article View Controller-->
         <scene sceneID="O6e-b9-CAi">
             <objects>
-                <viewController id="gIY-aT-Twj" customClass="ReadArticleViewController" customModule="Harcourts_Hilton" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gIY-aT-Twj" customClass="SingleArticleViewController" customModule="Harcourts_Hilton" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KRL-g1-reT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                                                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageCell" id="ai9-99-EKY" customClass="ReadArticleGalleryImageCollectionViewCell" customModule="Harcourts_Hilton" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageCell" id="ai9-99-EKY" customClass="SingleArticleGalleryImageCollectionViewCell" customModule="Harcourts_Hilton" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="0.0" width="128" height="128"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -83,7 +83,7 @@
                                                                             <constraint firstItem="sLl-p2-Z8k" firstAttribute="centerX" secondItem="ai9-99-EKY" secondAttribute="centerX" id="YIb-5n-e5C"/>
                                                                         </constraints>
                                                                         <connections>
-                                                                            <outlet property="galleryImage" destination="sLl-p2-Z8k" id="Jsk-Nf-lOV"/>
+                                                                            <outlet property="imageView" destination="sLl-p2-Z8k" id="Jsk-Nf-lOV"/>
                                                                         </connections>
                                                                     </collectionViewCell>
                                                                 </cells>
@@ -152,10 +152,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="wlm-bN-z2r"/>
                     <connections>
-                        <outlet property="articleContent" destination="SkT-eP-W9s" id="xfW-gQ-NaZ"/>
-                        <outlet property="articleGallery" destination="ukP-VS-cK2" id="tHb-uR-S4W"/>
-                        <outlet property="articleGalleryView" destination="71E-zM-19h" id="evN-1K-jTR"/>
-                        <outlet property="articleTitle" destination="GGB-Ag-jM8" id="sgg-cE-VWj"/>
+                        <outlet property="contentLabel" destination="SkT-eP-W9s" id="xfW-gQ-NaZ"/>
+                        <outlet property="galleryCollectionView" destination="ukP-VS-cK2" id="tHb-uR-S4W"/>
+                        <outlet property="galleryContainerView" destination="71E-zM-19h" id="evN-1K-jTR"/>
+                        <outlet property="titleLabel" destination="GGB-Ag-jM8" id="sgg-cE-VWj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwL-eR-OJG" userLabel="First Responder" sceneMemberID="firstResponder"/>

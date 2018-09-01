@@ -1,5 +1,5 @@
 //
-//  ReadArticleViewController.swift
+//  SingleArticleViewController.swift
 //  Harcourts Hilton
 //
 //  Created by Lee Watkins on 2018/05/01.
@@ -9,11 +9,11 @@
 import UIKit
 import Kingfisher
 
-class ReadArticleViewController: UIViewController {
-    @IBOutlet weak var articleTitle: UILabel!
-    @IBOutlet weak var articleContent: UILabel!
-    @IBOutlet weak var articleGalleryView: UIView!
-    @IBOutlet weak var articleGallery: UICollectionView!
+class SingleArticleViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var galleryContainerView: UIView!
+    @IBOutlet weak var galleryCollectionView: UICollectionView!
     
     var article: Article? {
         didSet {
@@ -33,23 +33,23 @@ class ReadArticleViewController: UIViewController {
     
     func reloadView() {
         loadViewIfNeeded()
-        articleTitle.text = article?.title
+        titleLabel.text = article?.title
         if let content = article?.content {
-            articleContent.attributedText = NSAttributedString(string: content, attributes: [kCTParagraphStyleAttributeName as NSAttributedStringKey : contentStyle])
+            contentLabel.attributedText = NSAttributedString(string: content, attributes: [kCTParagraphStyleAttributeName as NSAttributedStringKey : contentStyle])
         }
-        articleGallery.reloadData()
-        articleGalleryView.isHidden = article?.images.count == 0
+        galleryCollectionView.reloadData()
+        galleryContainerView.isHidden = article?.images.count == 0
     }
 
 }
 
-extension ReadArticleViewController: ArticleSelectionDelegate {
+extension SingleArticleViewController: ArticleSelectionDelegate {
     func articleSelected(_ newArticle: Article) {
         article = newArticle
     }
 }
 
-extension ReadArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SingleArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let article = article else { return 0 }
         return article.images.count
@@ -57,11 +57,11 @@ extension ReadArticleViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ReadArticleGalleryImageCollectionViewCell,
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
             let image = article?.images[indexPath.item],
             let imageURL = URL(string: image.thumbnail_link)
             else { return UICollectionViewCell() }
-        cell.galleryImage.kf.setImage(with: imageURL)
+        cell.imageView.kf.setImage(with: imageURL)
         return cell
     }
     

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let masterNav = splitViewController.viewControllers.first as? UINavigationController,
             let listArticlesVC = masterNav.topViewController as? ArticleListViewController,
             let detailNav = splitViewController.viewControllers.last as? UINavigationController,
-            let readArticlesVC = detailNav.topViewController as? ReadArticleViewController
+            let readArticlesVC = detailNav.topViewController as? SingleArticleViewController
             else { fatalError() }
         
 //        let firstArticle = listArticlesVC.viewModel.article(for: 0)
