@@ -6,25 +6,29 @@ PODS:
   - Realm/Headers (3.4.0)
   - RealmSwift (3.4.0):
     - Realm (= 3.4.0)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - RealmSwift
+  - TTTAttributedLabel
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Kingfisher
     - Realm
     - RealmSwift
+    - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
   RealmSwift: f40a747beaea1cadde7dcef41ee5a34b3001677b
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 6b04b136d45ca20d51385370a814288c37664bf5
+PODFILE CHECKSUM: 205d14e17281e98a2a4f80dc4b7325dc08b9f700
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
