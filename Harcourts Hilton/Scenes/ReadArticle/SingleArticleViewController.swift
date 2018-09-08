@@ -8,10 +8,11 @@
 
 import UIKit
 import Kingfisher
+import TTTAttributedLabel
 
 class SingleArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: TTTAttributedLabel!
     @IBOutlet weak var galleryContainerView: UIView!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
@@ -35,12 +36,49 @@ class SingleArticleViewController: UIViewController {
         loadViewIfNeeded()
         titleLabel.text = article?.title
         if let content = article?.content {
-            contentLabel.attributedText = NSAttributedString(string: content, attributes: [kCTParagraphStyleAttributeName as NSAttributedStringKey : contentStyle])
+            contentLabel.htmlText = content
         }
         galleryCollectionView.reloadData()
-        galleryContainerView.isHidden = article?.images.count == 0
+        galleryContainerView.isHidden = true //article?.links.wpAttachment.images.count == 0
     }
+}
 
+extension TTTAttributedLabel {
+    var htmlText: String {
+        set {
+            let attributedString = newValue.attributedStringFromHTML
+            attributedText = attributedString
+        }
+        get {
+            return attributedText.htmlString
+        }
+    }
+}
+
+extension String {
+    var attributedStringFromHTML: NSAttributedString {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data,
+                                          options: [.documentType: NSAttributedString.DocumentType.html,
+                                                    .characterEncoding : String.Encoding.utf8.rawValue],
+                                          documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+}
+
+extension NSAttributedString {
+    var htmlString: String {
+        let documentAttributes: [NSAttributedString.DocumentAttributeKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .characterEncoding : String.Encoding.utf8]
+        do {
+            let htmlData = try data(from: NSRange(location: 0, length: length), documentAttributes: documentAttributes)
+            return String(data: htmlData, encoding: .utf8) ?? String()
+        } catch {
+            return String()
+        }
+    }
 }
 
 extension SingleArticleViewController: ArticleSelectionDelegate {
@@ -52,17 +90,18 @@ extension SingleArticleViewController: ArticleSelectionDelegate {
 extension SingleArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let article = article else { return 0 }
-        return article.images.count
+        return 0 // article.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
-            let image = article?.images[indexPath.item],
-            let imageURL = URL(string: image.thumbnail_link)
-            else { return UICollectionViewCell() }
-        cell.imageView.kf.setImage(with: imageURL)
-        return cell
+        return UICollectionViewCell()
+//        guard
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
+//            let image = article?.images[indexPath.item],
+//            let imageURL = URL(string: image.thumbnail_link)
+//            else { return UICollectionViewCell() }
+//        cell.imageView.kf.setImage(with: imageURL)
+//        return cell
     }
     
 }

@@ -19,6 +19,7 @@
 		9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1594202097689200B8B923 /* ArticleListViewModel.swift */; };
 		9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */; };
 		9BA27B212098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B202098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift */; };
+		9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5730B2143C28100AB94C2 /* RawArticles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9B1594202097689200B8B923 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		9BA27B202098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BB5730B2143C28100AB94C2 /* RawArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawArticles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				9B15940D209753B900B8B923 /* Article.swift */,
+				9BB5730B2143C28100AB94C2 /* RawArticles.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				9B15940E209753B900B8B923 /* Article.swift in Sources */,
 				9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */,
 				9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */,
+				9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */,
 				9B15940B2097519B00B8B923 /* ArticlesRouter.swift in Sources */,
 				9BA27B212098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */,
 				9B1593FA2097239000B8B923 /* ArticleListViewController.swift in Sources */,

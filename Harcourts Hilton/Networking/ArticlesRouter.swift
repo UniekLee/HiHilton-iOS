@@ -13,7 +13,7 @@ enum ArticlesRouter: URLRequestConvertible {
     case listArticles
     
     static let baseURLString = "http://localhost:8888/hilton"
-    static let baseRESTString = "wp-json/swiftypress/v2"
+    static let baseRESTString = "wp-json/wp/v2"
     
     var method: HTTPMethod {
         switch self {
