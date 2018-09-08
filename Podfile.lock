@@ -1,6 +1,12 @@
 PODS:
   - Alamofire (4.7.2)
-  - Kingfisher (4.7.0)
+  - Cache (4.2.0)
+  - Hue (3.0.1)
+  - Imaginary (3.0.3):
+    - Cache (~> 4.0)
+  - Lightbox (2.1.2):
+    - Hue (~> 3.0)
+    - Imaginary (~> 3.0)
   - Realm (3.4.0):
     - Realm/Headers (= 3.4.0)
   - Realm/Headers (3.4.0)
@@ -10,25 +16,31 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Kingfisher
+  - Lightbox
   - RealmSwift
   - TTTAttributedLabel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Kingfisher
+    - Cache
+    - Hue
+    - Imaginary
+    - Lightbox
     - Realm
     - RealmSwift
     - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  Cache: f28f8dd64b632155aabf9b3906b036a659048251
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
+  Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
   Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
   RealmSwift: f40a747beaea1cadde7dcef41ee5a34b3001677b
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 205d14e17281e98a2a4f80dc4b7325dc08b9f700
+PODFILE CHECKSUM: db8f52724f07e47bce615b07d055f4e50e5812e0
 
 COCOAPODS: 1.5.3

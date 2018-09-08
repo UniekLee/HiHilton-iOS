@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Kingfisher
 import TTTAttributedLabel
+import Lightbox
+import Imaginary
 
 class SingleArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
@@ -37,6 +38,8 @@ class SingleArticleViewController: UIViewController {
         super.viewDidLoad()
         galleryCollectionView.register(SingleArticleGalleryImageCollectionViewCell.nib, forCellWithReuseIdentifier: "thumbnailCell")
         updateViewContent()
+        LightboxConfig.PageIndicator.separatorColor = .clear
+        LightboxConfig.PageIndicator.textAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
     func updateViewContent() {
@@ -59,8 +62,21 @@ extension SingleArticleViewController: UICollectionViewDelegate, UICollectionVie
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "thumbnailCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
             let mediaURL = URL(string: mediaItem.thumbnailPath)
             else { return UICollectionViewCell() }
-        cell.imageView.kf.setImage(with: mediaURL)
+        cell.imageView.setImage(url: mediaURL)
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = LightboxController(images: lightboxImages, startIndex: indexPath.item)
+        controller.dynamicBackground = true
+        present(controller, animated: true, completion: nil)
+    }
+}
+
+extension SingleArticleViewController {
+    var lightboxImages: [LightboxImage] {
+        return media.map({ (media) -> LightboxImage in
+            LightboxImage(imageURL: URL(string: media.fullPath)!, text: media.caption, videoURL: nil)
+        })
+    }
 }

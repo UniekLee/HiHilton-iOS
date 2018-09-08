@@ -8,7 +8,7 @@ target 'Harcourts Hilton' do
   # Pods for Harcourts Hilton
   pod 'RealmSwift'
   pod 'Alamofire'
-  pod 'Kingfisher'
   pod 'TTTAttributedLabel'
+  pod 'Lightbox'
 
 end
