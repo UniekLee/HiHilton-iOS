@@ -183,12 +183,20 @@
 			children = (
 				9BB114282144073600E6CD6A /* SingleArticleFlowController.swift */,
 				9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */,
-				9BB1142A2144086A00E6CD6A /* SingleArticleViewController.xib */,
 				9BB11430214413EE00E6CD6A /* ArticleMediaModel.swift */,
+				9B49822F21442121004EBBA2 /* Views */,
+			);
+			path = SingleArticle;
+			sourceTree = "<group>";
+		};
+		9B49822F21442121004EBBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BB1142A2144086A00E6CD6A /* SingleArticleViewController.xib */,
 				9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */,
 				9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */,
 			);
-			path = SingleArticle;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9BB113FB2143E12800E6CD6A /* FoundationExtensions */ = {
