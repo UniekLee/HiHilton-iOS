@@ -17,6 +17,7 @@ class SingleArticleViewController: UIViewController {
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
     var article: Article
+    var media: [Media]
     
     lazy var contentStyle: NSParagraphStyle = {
        let style = NSMutableParagraphStyle()
@@ -24,8 +25,9 @@ class SingleArticleViewController: UIViewController {
         return style.copy() as! NSParagraphStyle
     }()
     
-    init(with article: Article) {
+    init(with article: Article, media: [Media] = []) {
         self.article = article
+        self.media = media
         super.init(nibName: String(describing: SingleArticleViewController.self), bundle: HarcourtsHilton)
     }
     
@@ -33,6 +35,7 @@ class SingleArticleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        galleryCollectionView.register(SingleArticleGalleryImageCollectionViewCell.nib, forCellWithReuseIdentifier: "thumbnailCell")
         updateViewContent()
     }
     
@@ -41,24 +44,23 @@ class SingleArticleViewController: UIViewController {
         titleLabel.text = article.title
         contentLabel.htmlText = article.content
         galleryCollectionView.reloadData()
-        galleryContainerView.isHidden = true //article?.links.wpAttachment.images.count == 0
+        galleryContainerView.isHidden = media.count == 0
     }
 }
 
 extension SingleArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0 // article.images.count
+        return media.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-//        guard
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
-//            let image = article?.images[indexPath.item],
-//            let imageURL = URL(string: image.thumbnail_link)
-//            else { return UICollectionViewCell() }
-//        cell.imageView.kf.setImage(with: imageURL)
-//        return cell
+        let mediaItem = media[indexPath.item]
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "thumbnailCell", for: indexPath) as? SingleArticleGalleryImageCollectionViewCell,
+            let mediaURL = URL(string: mediaItem.thumbnailPath)
+            else { return UICollectionViewCell() }
+        cell.imageView.kf.setImage(with: mediaURL)
+        return cell
     }
     
 }

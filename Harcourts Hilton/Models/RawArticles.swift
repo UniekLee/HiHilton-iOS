@@ -38,8 +38,8 @@ struct Content: Codable {
 }
 
 struct Links: Codable {
-    let featuredmedia: [Media]?
-    let attachment: [Media]?
+    let featuredmedia: [MediaLink]?
+    let attachment: [MediaLink]?
     
     enum CodingKeys: String, CodingKey {
         case featuredmedia = "wp:featuredmedia"
@@ -47,7 +47,7 @@ struct Links: Codable {
     }
 }
 
-struct Media: Codable {
+struct MediaLink: Codable {
     let embeddable: Bool?
     let href: String?
 }

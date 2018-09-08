@@ -12,4 +12,14 @@ class SingleArticleGalleryImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    static var nib: UINib {
+        return UINib(nibName: String(describing: SingleArticleGalleryImageCollectionViewCell.self),
+                     bundle: HarcourtsHilton)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
 }

@@ -26,20 +26,6 @@ class Article: Object, Decodable {
         return "id"
     }
     
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case excerpt
-        case content
-        case date
-        case modified
-        case featuredImage = "featured_media"
-        case categories
-        case tags
-        case images
-        
-    }
-    
     required convenience init(from decoder: Decoder) throws {
         let rawArticle = try RawArticle(from: decoder)
         self.init()
@@ -52,24 +38,6 @@ class Article: Object, Decodable {
         featuredImage = Image()
         featuredImage?.id = rawArticle.featuredMediaId
         featuredImage?.link = rawArticle.links?.featuredmedia?.first?.href
-//
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        id = try container.decode(Int.self, forKey: .id)
-//        title = try container.decode(String.self, forKey: .title)
-//        excerpt = try container.decode(String.self, forKey: .excerpt)
-//        content = try container.decode(String.self, forKey: .content)
-//        date = try container.decode(Date.self, forKey: .date)
-//        modified = try container.decode(Date.self, forKey: .modified)
-//        featuredImage = try container.decodeIfPresent(Image.self, forKey: .featuredImage)
-//
-//        let categoriesArray = try container.decode([Category].self, forKey: .categories)
-//        categories.append(objectsIn: categoriesArray)
-//
-//        let tagsArray = try container.decode([Tag].self, forKey: .tags)
-//        tags.append(objectsIn: tagsArray)
-//
-//        let imageArray = try container.decode([Image].self, forKey: .images)
-//        images.append(objectsIn: imageArray)
     }
 }
 

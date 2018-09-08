@@ -36,9 +36,10 @@ class SingleArticleFlowController: FlowController {
 
 extension SingleArticleFlowController {
     func getArticleDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        guard let articleId = article?.id else { return }
+        ArticleMediaModel.getMedia(for: articleId) { [weak self] (media, error) in
             guard let article = self?.article else { return }
-            let singleArticleVC = SingleArticleViewController(with: article)
+            let singleArticleVC = SingleArticleViewController(with: article, media: media)
             self?.transition(to: singleArticleVC)
         }
     }
