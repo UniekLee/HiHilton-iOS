@@ -43,45 +43,6 @@ class SingleArticleViewController: UIViewController {
     }
 }
 
-extension TTTAttributedLabel {
-    var htmlText: String {
-        set {
-            let attributedString = newValue.attributedStringFromHTML
-            attributedString.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20, weight: .light)], range: NSRange(location: 0, length: attributedString.length))
-            attributedText = attributedString
-        }
-        get {
-            return attributedText.htmlString
-        }
-    }
-}
-
-extension String {
-    var attributedStringFromHTML: NSMutableAttributedString {
-        guard let data = data(using: .utf8) else { return NSMutableAttributedString() }
-        do {
-            return try NSMutableAttributedString(data: data,
-                                          options: [.documentType: NSAttributedString.DocumentType.html,
-                                                    .characterEncoding : String.Encoding.utf8.rawValue],
-                                          documentAttributes: nil)
-        } catch {
-            return NSMutableAttributedString()
-        }
-    }
-}
-
-extension NSAttributedString {
-    var htmlString: String {
-        let documentAttributes: [NSAttributedString.DocumentAttributeKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .characterEncoding : String.Encoding.utf8]
-        do {
-            let htmlData = try data(from: NSRange(location: 0, length: length), documentAttributes: documentAttributes)
-            return String(data: htmlData, encoding: .utf8) ?? String()
-        } catch {
-            return String()
-        }
-    }
-}
-
 extension SingleArticleViewController: ArticleSelectionDelegate {
     func articleSelected(_ newArticle: Article) {
         article = newArticle

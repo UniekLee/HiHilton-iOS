@@ -19,6 +19,9 @@
 		9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1594202097689200B8B923 /* ArticleListViewModel.swift */; };
 		9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */; };
 		9BA27B212098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B202098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift */; };
+		9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */; };
+		9BB113FF2143E15B00E6CD6A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */; };
+		9BB114022143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB114012143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift */; };
 		9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5730B2143C28100AB94C2 /* RawArticles.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		9B1594202097689200B8B923 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		9BA27B202098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
+		9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		9BB114012143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTAttributedLabelExtensions.swift; sourceTree = "<group>"; };
 		9BB5730B2143C28100AB94C2 /* RawArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawArticles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +98,8 @@
 		9B1593F62097239000B8B923 /* Harcourts Hilton */ = {
 			isa = PBXGroup;
 			children = (
+				9BB113FB2143E12800E6CD6A /* FoundationExtensions */,
+				9BB114002143E17A00E6CD6A /* ThirdPartyExtensions */,
 				9B15940C209753AC00B8B923 /* Models */,
 				9B1594092097286700B8B923 /* Networking */,
 				9B15940F209762AB00B8B923 /* Scenes */,
@@ -147,6 +155,23 @@
 				9BA27B202098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift */,
 			);
 			path = ReadArticle;
+			sourceTree = "<group>";
+		};
+		9BB113FB2143E12800E6CD6A /* FoundationExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */,
+				9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */,
+			);
+			path = FoundationExtensions;
+			sourceTree = "<group>";
+		};
+		9BB114002143E17A00E6CD6A /* ThirdPartyExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BB114012143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift */,
+			);
+			path = ThirdPartyExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +295,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B15940E209753B900B8B923 /* Article.swift in Sources */,
+				9BB114022143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift in Sources */,
 				9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */,
 				9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */,
 				9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */,
+				9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */,
 				9B15940B2097519B00B8B923 /* ArticlesRouter.swift in Sources */,
+				9BB113FF2143E15B00E6CD6A /* StringExtensions.swift in Sources */,
 				9BA27B212098BAAB00DB2EAC /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */,
 				9B1593FA2097239000B8B923 /* ArticleListViewController.swift in Sources */,
 				9B1593F82097239000B8B923 /* AppDelegate.swift in Sources */,
