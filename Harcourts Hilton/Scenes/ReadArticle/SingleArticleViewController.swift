@@ -47,6 +47,7 @@ extension TTTAttributedLabel {
     var htmlText: String {
         set {
             let attributedString = newValue.attributedStringFromHTML
+            attributedString.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20, weight: .light)], range: NSRange(location: 0, length: attributedString.length))
             attributedText = attributedString
         }
         get {
@@ -56,15 +57,15 @@ extension TTTAttributedLabel {
 }
 
 extension String {
-    var attributedStringFromHTML: NSAttributedString {
-        guard let data = data(using: .utf8) else { return NSAttributedString() }
+    var attributedStringFromHTML: NSMutableAttributedString {
+        guard let data = data(using: .utf8) else { return NSMutableAttributedString() }
         do {
-            return try NSAttributedString(data: data,
+            return try NSMutableAttributedString(data: data,
                                           options: [.documentType: NSAttributedString.DocumentType.html,
                                                     .characterEncoding : String.Encoding.utf8.rawValue],
                                           documentAttributes: nil)
         } catch {
-            return NSAttributedString()
+            return NSMutableAttributedString()
         }
     }
 }
