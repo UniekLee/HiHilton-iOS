@@ -13,12 +13,18 @@ enum ArticlesRouter: URLRequestConvertible {
     case listArticles
     case getMedia(articleId: Int)
     
+#if DEBUG
     static let baseURLString = "http://localhost:8888/hilton"
+#else
+    static let baseURLString = "https://hilton.swiftetc.com"
+#endif
+    
     static let baseRESTString = "/wp-json/wp/v2"
     
     var method: HTTPMethod {
         switch self {
-        case .listArticles, .getMedia: return .get
+        case .listArticles, .getMedia:
+            return .get
         }
     }
     
