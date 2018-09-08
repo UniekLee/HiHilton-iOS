@@ -6,7 +6,6 @@
 //  Copyright © 2018 UniekLee. All rights reserved.
 //
 
-import Foundation
 import TTTAttributedLabel
 
 extension TTTAttributedLabel {

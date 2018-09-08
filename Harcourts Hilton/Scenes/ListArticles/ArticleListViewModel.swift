@@ -9,36 +9,15 @@
 import Foundation
 import RealmSwift
 
-protocol ListArticlesViewModelProtocol {
-    func reloadArticlesSucceeded()
-    func reloadArticlesFailed(with error: Error)
-}
-
 class ArticleListViewModel {
-    let model: ArticleListModel
-    var delegate: ListArticlesViewModelProtocol?
-    var articles: [Article] = []
+    var articles: [Article]
+    
     var numberOfItems: Int {
         return articles.count
     }
     
-    init() {
-        self.model = ArticleListModel()
-        model.getArticles(completion: handleDataFetch(with:error:))
-    }
-    
-    func reload() {
-        model.updateArticles(completion: handleDataFetch(with:error:))
-    }
-    
-    func handleDataFetch(with newArticles: [Article], error: Error?) {
-        if let error = error {
-            delegate?.reloadArticlesFailed(with: error)
-            return
-        }
-        
-        articles = newArticles
-        delegate?.reloadArticlesSucceeded()
+    init(with articles: [Article]) {
+        self.articles = articles
     }
     
     func title(for item: Int) -> String {

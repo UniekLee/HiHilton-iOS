@@ -12,21 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
+    var appFlow: AppFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        guard let splitViewController = window?.rootViewController as? UISplitViewController,
-            let masterNav = splitViewController.viewControllers.first as? UINavigationController,
-            let listArticlesVC = masterNav.topViewController as? ArticleListViewController,
-            let detailNav = splitViewController.viewControllers.last as? UINavigationController,
-            let readArticlesVC = detailNav.topViewController as? SingleArticleViewController
-            else { fatalError() }
-        
-//        let firstArticle = listArticlesVC.viewModel.article(for: 0)
-//        readArticlesVC.article = firstArticle
-        readArticlesVC.navigationItem.leftItemsSupplementBackButton = true
-        readArticlesVC.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        listArticlesVC.delegate = readArticlesVC
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        guard let window = window else { return false }
+        appFlow = AppFlowController(with: window)
+        appFlow?.start()
         return true
     }
 

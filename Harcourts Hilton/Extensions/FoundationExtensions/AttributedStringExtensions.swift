@@ -6,8 +6,6 @@
 //  Copyright © 2018 UniekLee. All rights reserved.
 //
 
-import Foundation
-
 extension NSAttributedString {
     var htmlString: String {
         let documentAttributes: [NSAttributedString.DocumentAttributeKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .characterEncoding : String.Encoding.utf8]

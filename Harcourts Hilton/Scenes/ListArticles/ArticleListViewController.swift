@@ -10,28 +10,61 @@ import UIKit
 import Alamofire
 
 protocol ArticleSelectionDelegate: class {
-    func articleSelected(_ newArticle: Article)
+    func didPullToRefreshArticleList(viewController controller: ArticleListViewController)
+    func articleList(viewController controller: ArticleListViewController, didSelectArticle article: Article)
 }
 
 class ArticleListViewController: UITableViewController {
-    var viewModel: ArticleListViewModel
-    weak var delegate: ArticleSelectionDelegate?
+    private var viewModel: ArticleListViewModel
+    private weak var delegate: ArticleSelectionDelegate?
+    
+    init(with viewModel: ArticleListViewModel, delegate: ArticleSelectionDelegate) {
+        self.viewModel = viewModel
+        self.delegate = delegate
+        super.init(style: .plain)
+    }
     
     required init?(coder aDecoder: NSCoder) {
-        viewModel = ArticleListViewModel()
-        super.init(coder: aDecoder)
-        viewModel.delegate = self
+        fatalError("Use another initializer")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        splitViewController?.delegate = self
+        setUpTableView()
+    }
+    
+    func setUpTableView() {
+        setUpRefreshController()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    func setUpRefreshController() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pulledToRefresh(_:)), for: .valueChanged)
+        self.refreshControl = refreshControl
     }
     
     @IBAction func pulledToRefresh(_ sender: UIRefreshControl) {
-        viewModel.reload()
+        delegate?.didPullToRefreshArticleList(viewController: self)
+    }
+}
+
+// FlowControllerInputs
+extension ArticleListViewController: ArticleFlowControllerCommands {
+    func endLoading() {
+        if refreshControl?.isRefreshing == true {
+            refreshControl?.endRefreshing()
+        }
     }
     
+    func update(with articles: [Article]) {
+        viewModel.articles = articles
+        tableView.reloadData()
+    }
+}
+
+// Table View Delegate & Data Source
+extension ArticleListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,30 +82,6 @@ class ArticleListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedArticle = viewModel.article(for: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.articleSelected(selectedArticle)
-        if let readArticleVC = delegate as? SingleArticleViewController,
-            let readArticleNav = readArticleVC.navigationController {
-            splitViewController?.showDetailViewController(readArticleNav, sender: nil)
-        }
+        delegate?.articleList(viewController: self, didSelectArticle: selectedArticle)
     }
 }
-
-extension ArticleListViewController: UISplitViewControllerDelegate {
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
-}
-
-extension ArticleListViewController: ListArticlesViewModelProtocol {
-    func reloadArticlesSucceeded() {
-        self.refreshControl?.endRefreshing()
-        self.tableView.reloadData()
-    }
-    
-    func reloadArticlesFailed(with error: Error) {
-        self.refreshControl?.endRefreshing()
-        // TODO: show error
-        print(error.localizedDescription)
-    }
-}
-

@@ -16,11 +16,7 @@ class SingleArticleViewController: UIViewController {
     @IBOutlet weak var galleryContainerView: UIView!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
-    var article: Article? {
-        didSet {
-            reloadView()
-        }
-    }
+    var article: Article
     
     lazy var contentStyle: NSParagraphStyle = {
        let style = NSMutableParagraphStyle()
@@ -28,30 +24,29 @@ class SingleArticleViewController: UIViewController {
         return style.copy() as! NSParagraphStyle
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(with article: Article) {
+        self.article = article
+        super.init(nibName: String(describing: SingleArticleViewController.self), bundle: HarcourtsHilton)
     }
     
-    func reloadView() {
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViewContent()
+    }
+    
+    func updateViewContent() {
         loadViewIfNeeded()
-        titleLabel.text = article?.title
-        if let content = article?.content {
-            contentLabel.htmlText = content
-        }
+        titleLabel.text = article.title
+        contentLabel.htmlText = article.content
         galleryCollectionView.reloadData()
         galleryContainerView.isHidden = true //article?.links.wpAttachment.images.count == 0
     }
 }
 
-extension SingleArticleViewController: ArticleSelectionDelegate {
-    func articleSelected(_ newArticle: Article) {
-        article = newArticle
-    }
-}
-
 extension SingleArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let article = article else { return 0 }
         return 0 // article.images.count
     }
     
