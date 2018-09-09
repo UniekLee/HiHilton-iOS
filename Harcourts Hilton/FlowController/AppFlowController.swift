@@ -26,9 +26,16 @@ class AppFlowController: FlowControllable {
     }
     
     func start() {
-        window.rootViewController = appNavController
+        let greetingVC = GreetingViewController(nibName: String(describing: GreetingViewController.self), bundle: HarcourtsHilton)
+        window.rootViewController = greetingVC
         window.makeKeyAndVisible()
-        goToArticleList()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            greetingVC.completeGreeting()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [unowned self] in
+            self.window.rootViewController = self.appNavController
+            self.goToArticleList()
+        }
     }
 }
 

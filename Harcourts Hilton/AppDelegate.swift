@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hue
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appFlow: AppFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.isStatusBarHidden = false
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         guard let window = window else { return false }
