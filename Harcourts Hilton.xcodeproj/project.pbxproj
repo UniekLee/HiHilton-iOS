@@ -38,6 +38,8 @@
 		9BB1142F2144123100E6CD6A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1142E2144123100E6CD6A /* Media.swift */; };
 		9BB11431214413EE00E6CD6A /* ArticleMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB11430214413EE00E6CD6A /* ArticleMediaModel.swift */; };
 		9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5730B2143C28100AB94C2 /* RawArticles.swift */; };
+		9BF91E1E214AB56600B100F3 /* AppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */; };
+		9BF91E20214AB5BE00B100F3 /* ColourExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		9BB1142E2144123100E6CD6A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		9BB11430214413EE00E6CD6A /* ArticleMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMediaModel.swift; sourceTree = "<group>"; };
 		9BB5730B2143C28100AB94C2 /* RawArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawArticles.swift; sourceTree = "<group>"; };
+		9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtensions.swift; sourceTree = "<group>"; };
+		9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB114172143EAB500E6CD6A /* ViewControllerExtensions.swift */,
+				9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 		9BB114162143EAA400E6CD6A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */,
 				9BB113FB2143E12800E6CD6A /* FoundationExtensions */,
 				9BB114152143EA9E00E6CD6A /* UIKitExtensions */,
 				9BB114002143E17A00E6CD6A /* ThirdPartyExtensions */,
@@ -413,12 +419,14 @@
 				9B49822D21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */,
 				9B1593FA2097239000B8B923 /* ArticleListViewController.swift in Sources */,
 				9BB1141F2143EB4400E6CD6A /* HarcourtsHilton.swift in Sources */,
+				9BF91E20214AB5BE00B100F3 /* ColourExtensions.swift in Sources */,
 				9BB1142D21440DB300E6CD6A /* RawMedia.swift in Sources */,
 				9BB114212143F81B00E6CD6A /* ArticleListFlowController.swift in Sources */,
 				9B49823221447903004EBBA2 /* GreetingViewController.swift in Sources */,
 				9B1593F82097239000B8B923 /* AppDelegate.swift in Sources */,
 				9BB11431214413EE00E6CD6A /* ArticleMediaModel.swift in Sources */,
 				9BB114182143EAB500E6CD6A /* ViewControllerExtensions.swift in Sources */,
+				9BF91E1E214AB56600B100F3 /* AppDelegateExtensions.swift in Sources */,
 				9B15941F2097635A00B8B923 /* ArticleListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +571,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.unieklee.Harcourts-Hilton";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unieklee.Hilton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.unieklee.Harcourts-Hilton";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unieklee.Hilton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -21,8 +21,4 @@ class GreetingViewController: UIViewController {
             self.nameView.isHidden = false
         }
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }
