@@ -17,10 +17,7 @@ class Article: Object, Decodable {
     
     @objc dynamic var date = ""
     @objc dynamic var modified = ""
-    @objc dynamic var featuredImage: Image?
-    let categories = List<Category>()
-    let tags = List<Tag>()
-    let images = List<Image>()
+    @objc dynamic var featuredImage: WPImage?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -35,33 +32,13 @@ class Article: Object, Decodable {
         excerpt = rawArticle.excerpt.rendered
         date = rawArticle.dateGmt
         modified = rawArticle.modifiedGmt
-        featuredImage = Image()
+        featuredImage = WPImage()
         featuredImage?.id = rawArticle.featuredMediaId
-        featuredImage?.link = rawArticle.links?.featuredmedia?.first?.href
     }
 }
 
-class Author: Object, Decodable {
+class WPImage: Object, Decodable {
     @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    @objc dynamic var link = ""
-    @objc dynamic var avatar = ""
-}
-
-class Category: Object, Decodable {
-    
-}
-
-class Tag: Object, Decodable {
-    
-}
-
-class Image: Object, Decodable {
-    @objc dynamic var id = 0
-    @objc dynamic var link: String?
-    @objc dynamic var width = 0
-    @objc dynamic var height = 0
-    @objc dynamic var thumbnail_link = ""
-    @objc dynamic var thumbnail_width = 0
-    @objc dynamic var thumbnail_height = 0
+    @objc dynamic var path: String?
+    @objc dynamic var fetched: Bool = false
 }

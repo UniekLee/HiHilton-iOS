@@ -40,6 +40,13 @@
 		9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5730B2143C28100AB94C2 /* RawArticles.swift */; };
 		9BF91E1E214AB56600B100F3 /* AppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */; };
 		9BF91E20214AB5BE00B100F3 /* ColourExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */; };
+		9BF91E24214AD7FC00B100F3 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E22214AD7FC00B100F3 /* ArticleTableViewCell.swift */; };
+		9BF91E25214AD7FC00B100F3 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF91E23214AD7FC00B100F3 /* ArticleTableViewCell.xib */; };
+		9BF91E29214ADA3400B100F3 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E28214ADA3400B100F3 /* NibLoadable.swift */; };
+		9BF91E2B214ADA5C00B100F3 /* TableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E2A214ADA5C00B100F3 /* TableViewCellExtensions.swift */; };
+		9BF91E2D214AE0E900B100F3 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */; };
+		9BF91E2F214AE17600B100F3 /* MediaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E2E214AE17600B100F3 /* MediaRouter.swift */; };
+		9BF91E31214AE1CE00B100F3 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +87,13 @@
 		9BB5730B2143C28100AB94C2 /* RawArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawArticles.swift; sourceTree = "<group>"; };
 		9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtensions.swift; sourceTree = "<group>"; };
 		9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourExtensions.swift; sourceTree = "<group>"; };
+		9BF91E22214AD7FC00B100F3 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		9BF91E23214AD7FC00B100F3 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		9BF91E28214ADA3400B100F3 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		9BF91E2A214ADA5C00B100F3 /* TableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtensions.swift; sourceTree = "<group>"; };
+		9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		9BF91E2E214AE17600B100F3 /* MediaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRouter.swift; sourceTree = "<group>"; };
+		9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,7 @@
 				9B1594092097286700B8B923 /* Networking */,
 				9BB114102143E8D200E6CD6A /* FlowController */,
 				9BB114192143EAF400E6CD6A /* Views */,
+				9BF91E26214ADA0D00B100F3 /* Protocols */,
 				9BB114162143EAA400E6CD6A /* Extensions */,
 				9B1593FE2097239300B8B923 /* Assets.xcassets */,
 				9B1594002097239300B8B923 /* LaunchScreen.storyboard */,
@@ -151,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				9B15940A2097519B00B8B923 /* ArticlesRouter.swift */,
+				9BF91E2E214AE17600B100F3 /* MediaRouter.swift */,
+				9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -179,6 +196,7 @@
 		9B159410209762BD00B8B923 /* ListArticles */ = {
 			isa = PBXGroup;
 			children = (
+				9BF91E21214AD7D800B100F3 /* Cells */,
 				9BB114202143F81B00E6CD6A /* ArticleListFlowController.swift */,
 				9B1593F92097239000B8B923 /* ArticleListViewController.swift */,
 				9B1594202097689200B8B923 /* ArticleListViewModel.swift */,
@@ -249,6 +267,8 @@
 			children = (
 				9BB114172143EAB500E6CD6A /* ViewControllerExtensions.swift */,
 				9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */,
+				9BF91E2A214ADA5C00B100F3 /* TableViewCellExtensions.swift */,
+				9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -271,6 +291,31 @@
 				9BB1141B2143EB0C00E6CD6A /* LoadingViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9BF91E21214AD7D800B100F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9BF91E22214AD7FC00B100F3 /* ArticleTableViewCell.swift */,
+				9BF91E23214AD7FC00B100F3 /* ArticleTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9BF91E26214ADA0D00B100F3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9BF91E27214ADA1900B100F3 /* UIKit */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9BF91E27214ADA1900B100F3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9BF91E28214ADA3400B100F3 /* NibLoadable.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +382,7 @@
 				9B1594022097239300B8B923 /* LaunchScreen.storyboard in Resources */,
 				9B49823321447903004EBBA2 /* GreetingViewController.xib in Resources */,
 				9B1593FF2097239300B8B923 /* Assets.xcassets in Resources */,
+				9BF91E25214AD7FC00B100F3 /* ArticleTableViewCell.xib in Resources */,
 				9BB1142B2144086A00E6CD6A /* SingleArticleViewController.xib in Resources */,
 				9BB1141D2143EB0C00E6CD6A /* LoadingViewController.xib in Resources */,
 			);
@@ -403,18 +449,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB1142F2144123100E6CD6A /* Media.swift in Sources */,
+				9BF91E24214AD7FC00B100F3 /* ArticleTableViewCell.swift in Sources */,
 				9B15940E209753B900B8B923 /* Article.swift in Sources */,
 				9BB114022143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift in Sources */,
 				9BB114292144073600E6CD6A /* SingleArticleFlowController.swift in Sources */,
 				9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */,
 				9BB1141C2143EB0C00E6CD6A /* LoadingViewController.swift in Sources */,
+				9BF91E31214AE1CE00B100F3 /* NetworkRouter.swift in Sources */,
 				9BB114142143E9CD00E6CD6A /* AppFlowController.swift in Sources */,
 				9BB114232144007900E6CD6A /* FlowControllable.swift in Sources */,
+				9BF91E29214ADA3400B100F3 /* NibLoadable.swift in Sources */,
 				9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */,
 				9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */,
 				9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */,
 				9B15940B2097519B00B8B923 /* ArticlesRouter.swift in Sources */,
 				9BB113FF2143E15B00E6CD6A /* StringExtensions.swift in Sources */,
+				9BF91E2B214ADA5C00B100F3 /* TableViewCellExtensions.swift in Sources */,
 				9BB114122143E91C00E6CD6A /* FlowController.swift in Sources */,
 				9B49822D21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */,
 				9B1593FA2097239000B8B923 /* ArticleListViewController.swift in Sources */,
@@ -426,6 +476,8 @@
 				9B1593F82097239000B8B923 /* AppDelegate.swift in Sources */,
 				9BB11431214413EE00E6CD6A /* ArticleMediaModel.swift in Sources */,
 				9BB114182143EAB500E6CD6A /* ViewControllerExtensions.swift in Sources */,
+				9BF91E2F214AE17600B100F3 /* MediaRouter.swift in Sources */,
+				9BF91E2D214AE0E900B100F3 /* UIImageViewExtensions.swift in Sources */,
 				9BF91E1E214AB56600B100F3 /* AppDelegateExtensions.swift in Sources */,
 				9B15941F2097635A00B8B923 /* ArticleListModel.swift in Sources */,
 			);

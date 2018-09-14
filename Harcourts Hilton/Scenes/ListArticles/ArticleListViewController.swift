@@ -35,7 +35,8 @@ class ArticleListViewController: UITableViewController {
     
     func setUpTableView() {
         setUpRefreshController()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.prefetchDataSource = self
+        tableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: "articleCell")
     }
     
     func setUpRefreshController() {
@@ -74,8 +75,14 @@ extension ArticleListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = self.viewModel.title(for: indexPath.row)
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath) as? ArticleTableViewCell
+            else { return UITableViewCell() }
+        let article = viewModel.article(for: indexPath.row)
+        cell.setContent(for: article)
+        viewModel.imagePath(for: indexPath.row) { [cell] (imagePath) in
+            cell.setImage(for: imagePath)
+        }
         return cell
     }
     
@@ -83,5 +90,11 @@ extension ArticleListViewController {
         let selectedArticle = viewModel.article(for: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.articleList(viewController: self, didSelectArticle: selectedArticle)
+    }
+}
+
+extension ArticleListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        viewModel.fetchImagePaths(for: indexPaths.map({ $0.row }))
     }
 }

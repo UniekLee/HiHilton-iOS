@@ -18,4 +18,8 @@ extension String {
             return NSMutableAttributedString()
         }
     }
+    
+//    func asURL() -> URL? {
+//        return URL(string: self)
+//    }
 }
