@@ -24,14 +24,21 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     func setImage(for path: String?) {
-        guard let imagePath = path, let imageURL = URL(string: imagePath) else { return }
+        guard
+            let imagePath = path,
+            let imageURL = URL(string: imagePath)
+            else {
+                featuredImage.isHidden = true
+            return
+        }
+        featuredImage.isHidden = false
         featuredImage.setImage(url: imageURL)
     }
     
     func populateContent() {
         titleLabel.text = article?.title
         dateLabel.text = article?.date
-        excerptLabel.htmlText = article?.excerpt
+        excerptLabel.setHTML(text: article?.excerpt, withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15, weight: .light)])
 
 //        if imageId == 0 {
 //            hide the image view

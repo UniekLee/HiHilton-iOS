@@ -31,8 +31,7 @@ class ArticleListViewModel {
         }
     }
     
-    func imagePath(for item: Int, completion: @escaping (_ imagePath: String?) -> Void) {
-        let article = articles[item]
+    func imagePath(for article: Article, completion: @escaping (_ imagePath: String?) -> Void) {
         fetchImagePath(for: article, completion: completion)
     }
 }
@@ -41,9 +40,9 @@ class ArticleListViewModel {
 extension ArticleListViewModel {
     private func fetchImagePath(for article: Article, completion: ((_ thumbnailPath: String?) -> Void)? = nil) {
         guard
-            article.featuredImage?.fetched == false,
             let imageId = article.featuredImage?.id,
-            imageId != 0
+            imageId != 0,
+            article.featuredImage?.path == nil
             else {
                 completion?(article.featuredImage?.path)
                 return
@@ -53,8 +52,8 @@ extension ArticleListViewModel {
             switch response.result {
             case .success(let data):
                 self?.markFeaturedImageAsFetched(for: article)
-                ArticleListViewModel.decodeMedia(data: data, completion: { (media) in
-                    guard let media = media else { return }
+                ArticleListViewModel.decodeMedia(data: data, completion: { (decodedMedia) in
+                    guard let media = decodedMedia else { return }
                     let thumbnailPath = media.thumbnailPath
                     self?.setThumbnail(path: thumbnailPath, for: article)
                     completion?(thumbnailPath)
@@ -84,7 +83,8 @@ extension ArticleListViewModel {
         do {
             let media = try decoder.decode(Media.self, from: data)
             completion(media)
-        } catch {
+        } catch let decodeError {
+            debugPrint(decodeError.localizedDescription)
             completion(nil)
         }
     }

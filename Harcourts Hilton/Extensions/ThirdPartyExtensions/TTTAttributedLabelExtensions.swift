@@ -12,15 +12,25 @@ extension TTTAttributedLabel {
     var htmlText: String? {
         set {
             guard let attributedString = newValue?.attributedStringFromHTML else { return }
-            attributedString.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20, weight: .light)], range: attributedString.wholeString)
-            attributedText = attributedString
+            setHTML(text: attributedString,
+                    withAttributes: [
+                        NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20, weight: .light)
+                ]
+            )
         }
         get {
             return attributedText.htmlString
         }
     }
     
-    func setHTML(text: String, withAttributes attributes: [NSAttributedStringKey : Any]) {
-        
+    func setHTML(text: NSMutableAttributedString, withAttributes attributes: [NSAttributedStringKey : Any]) {
+        text.addAttributes(attributes, range: text.wholeString)
+        attributedText = text
+    }
+    
+    func setHTML(text: String?, withAttributes attributes: [NSAttributedStringKey : Any]) {
+        guard let attributedString = text?.attributedStringFromHTML else { return }
+        attributedString.addAttributes(attributes, range: attributedString.wholeString)
+        attributedText = attributedString
     }
 }

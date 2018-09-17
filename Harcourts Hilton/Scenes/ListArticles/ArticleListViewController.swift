@@ -80,7 +80,7 @@ extension ArticleListViewController {
             else { return UITableViewCell() }
         let article = viewModel.article(for: indexPath.row)
         cell.setContent(for: article)
-        viewModel.imagePath(for: indexPath.row) { [cell] (imagePath) in
+        viewModel.imagePath(for: article) { [cell] (imagePath) in
             cell.setImage(for: imagePath)
         }
         return cell

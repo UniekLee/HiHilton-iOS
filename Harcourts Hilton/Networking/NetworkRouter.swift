@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 
 struct NetworkRouter {
-    #if DEBUG
-    static let baseURLString = "http://localhost:8888/hilton"
-    #else
+//    #if DEBUG
+//    static let baseURLString = "http://localhost:8888/hilton"
+//    #else
     static let baseURLString = "https://hilton.swiftetc.com"
-    #endif
+//    #endif
     
     static let baseRESTString = "/wp-json/wp/v2"
 }
