@@ -15,7 +15,7 @@ typealias RawArticles = [RawArticle]
 
 struct RawArticle: Codable {
     let id: Int
-    let date, dateGmt, modified, modifiedGmt: String
+    let date, dateGmt, modified, modifiedGmt: Date
     let status, type: String
     let title, content, excerpt: Content
     let featuredMediaId: Int

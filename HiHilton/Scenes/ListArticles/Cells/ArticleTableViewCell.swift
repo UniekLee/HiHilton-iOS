@@ -36,16 +36,10 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     func populateContent() {
-        titleLabel.text = article?.title
-        dateLabel.text = article?.date
-        excerptLabel.setHTML(text: article?.excerpt, withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15, weight: .light)])
-
-//        if imageId == 0 {
-//            hide the image view
-//        }
-//        if let imageId = article?.featuredImage?.id {
-//            featuredImage.setWordPressMedia(id: imageId)
-//        }
+        guard let article = article else { return }
+        titleLabel.text = article.title
+        dateLabel.text = DateFormatter.articleListDateFormater.string(from: article.date)
+        excerptLabel.setHTML(text: article.excerpt, withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15, weight: .light)])
     }
     
     override func prepareForReuse() {

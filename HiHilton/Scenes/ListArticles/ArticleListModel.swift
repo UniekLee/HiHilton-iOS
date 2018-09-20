@@ -60,7 +60,7 @@ class ArticleListModel {
     
     fileprivate func decodeArticle(data: Data, completion: @escaping ([Article], Error?) -> Void) {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601WithoutTimeZones)
         do {
             let articles = try decoder.decode([Article].self, from: data)
             try realm.write {

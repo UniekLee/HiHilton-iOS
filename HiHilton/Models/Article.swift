@@ -15,8 +15,8 @@ class Article: Object, Decodable {
     @objc dynamic var excerpt: String? = ""
     @objc dynamic var content = ""
     
-    @objc dynamic var date = ""
-    @objc dynamic var modified = ""
+    @objc dynamic var date: Date = Date()
+    @objc dynamic var modified: Date = Date()
     @objc dynamic var featuredImage: WPImage?
     
     override static func primaryKey() -> String? {
