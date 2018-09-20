@@ -17,10 +17,10 @@ struct RawMedia: Codable {
     let id: Int
     let dateGmt, modifiedGmt: String
     let title, caption: Content
-    let mediaType, mimeType: String
+    let mediaType, mimeType: String?
     let mediaDetails: MediaDetails
-    let post: Int
-    let sourceURL: String
+    let post: Int?
+    let sourceURL: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -42,7 +42,7 @@ struct MediaDetails: Codable {
 }
 
 struct Sizes: Codable {
-    let thumbnail, medium, large, full: ImageSizeDetails
+    let thumbnail, medium, large, full: ImageSizeDetails?
 }
 
 struct ImageSizeDetails: Codable {

@@ -20,18 +20,13 @@ class SingleArticleViewController: UIViewController {
     var article: Article
     var media: [Media]
     
-    lazy var contentStyle: NSParagraphStyle = {
-       let style = NSMutableParagraphStyle()
-        style.lineSpacing = CGFloat(2)
-        return style.copy() as! NSParagraphStyle
-    }()
-    
     init(with article: Article, media: [Media] = []) {
         self.article = article
         self.media = media
         super.init(nibName: String(describing: SingleArticleViewController.self), bundle: HarcourtsHilton)
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     override func viewDidLoad() {

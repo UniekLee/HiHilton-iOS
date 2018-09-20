@@ -15,7 +15,7 @@ class Media: Object, Decodable {
     @objc dynamic var caption: String = ""
     @objc dynamic var date: String = ""
     @objc dynamic var modified: String = ""
-    @objc dynamic var type: String = ""
+    @objc dynamic var type: String? = ""
     @objc dynamic var fullPath: String = ""
     @objc dynamic var thumbnailPath: String = ""
     
@@ -32,7 +32,7 @@ class Media: Object, Decodable {
         date = rawMedia.dateGmt
         modified = rawMedia.modifiedGmt
         type = rawMedia.mediaType
-        fullPath = rawMedia.mediaDetails.sizes.full.sourceURL
-        thumbnailPath = rawMedia.mediaDetails.sizes.thumbnail.sourceURL
+        fullPath = rawMedia.mediaDetails.sizes.full?.sourceURL ?? ""
+        thumbnailPath = rawMedia.mediaDetails.sizes.thumbnail?.sourceURL ?? ""
     }
 }

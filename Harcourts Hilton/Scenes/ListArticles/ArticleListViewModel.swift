@@ -42,7 +42,7 @@ extension ArticleListViewModel {
         guard
             let imageId = article.featuredImage?.id,
             imageId != 0,
-            article.featuredImage?.path == nil
+            article.featuredImage?.path == nil || article.featuredImage?.path?.isEmpty == true
             else {
                 completion?(article.featuredImage?.path)
                 return
@@ -51,7 +51,6 @@ extension ArticleListViewModel {
         Alamofire.request(media).validate().responseData { [weak self, article] (response) in
             switch response.result {
             case .success(let data):
-                self?.markFeaturedImageAsFetched(for: article)
                 ArticleListViewModel.decodeMedia(data: data, completion: { (decodedMedia) in
                     guard let media = decodedMedia else { return }
                     let thumbnailPath = media.thumbnailPath
@@ -62,12 +61,6 @@ extension ArticleListViewModel {
                 debugPrint(error.localizedDescription)
                 completion?(nil)
             }
-        }
-    }
-    
-    private func markFeaturedImageAsFetched(for article: Article) -> ()? {
-        return try? Realm().write {
-            article.featuredImage?.fetched = true
         }
     }
     
