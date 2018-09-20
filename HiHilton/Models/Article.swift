@@ -11,13 +11,15 @@ import RealmSwift
 
 class Article: Object, Decodable {
     @objc dynamic var id = 0
-    @objc dynamic var title = ""
-    @objc dynamic var excerpt: String? = ""
-    @objc dynamic var content = ""
+    @objc dynamic var title: String?
+    @objc dynamic var excerpt: String?
+    @objc dynamic var content: String?
     
-    @objc dynamic var date: Date = Date()
-    @objc dynamic var modified: Date = Date()
+    @objc dynamic var date: Date?
+    @objc dynamic var modified: Date?
     @objc dynamic var featuredImage: WPImage?
+    
+    @objc dynamic var fetched: Bool = false
     
     override static func primaryKey() -> String? {
         return "id"
@@ -34,6 +36,7 @@ class Article: Object, Decodable {
         modified = rawArticle.modifiedGmt
         featuredImage = WPImage()
         featuredImage?.id = rawArticle.featuredMediaId
+        fetched = true
     }
 }
 

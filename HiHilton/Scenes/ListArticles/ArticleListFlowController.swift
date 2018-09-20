@@ -85,7 +85,7 @@ extension ArticleListFlowController {
     private func reportEventDidSelect(article: Article) {
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "id-\(article.id)",
-            AnalyticsParameterItemName: article.title,
+            AnalyticsParameterItemName: article.title ?? "",
             AnalyticsParameterContentType: "article"
             ])
     }

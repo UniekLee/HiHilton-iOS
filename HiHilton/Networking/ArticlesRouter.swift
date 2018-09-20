@@ -11,11 +11,12 @@ import Alamofire
 
 enum ArticlesRouter: URLRequestConvertible, NetworkRoutable {
     case listArticles
+    case getArticle(articleId: Int)
     case getMedia(articleId: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .listArticles, .getMedia:
+        case .listArticles, .getMedia, .getArticle:
             return .get
         }
     }
@@ -26,12 +27,14 @@ enum ArticlesRouter: URLRequestConvertible, NetworkRoutable {
             return "/articles"
         case .getMedia:
             return "/media"
+        case .getArticle(let articleId):
+            return "/articles/\(articleId)"
         }
     }
     
     var queries: [URLQueryItem] {
         switch self {
-        case .listArticles:
+        case .listArticles, .getArticle:
             return []
         case .getMedia(let articleId):
             return [
