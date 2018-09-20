@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appFlow: AppFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        authenticateUser()
         setUpStyling()
         UIApplication.shared.isStatusBarHidden = false
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -41,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

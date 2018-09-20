@@ -10,5 +10,9 @@ target 'HiHilton' do
   pod 'Alamofire'
   pod 'TTTAttributedLabel'
   pod 'Lightbox'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Fabric', '~> 1.7.11'
+  pod 'Crashlytics', '~> 3.10.7'
 
 end

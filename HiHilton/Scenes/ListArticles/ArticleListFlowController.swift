@@ -5,6 +5,7 @@
 //  Created by Lee Watkins on 2018/09/08.
 //  Copyright © 2018 UniekLee. All rights reserved.
 //
+import FirebaseAnalytics
 
 protocol ArticleFlowControllerCommands {
     func endLoading()
@@ -27,7 +28,7 @@ class ArticleListFlowController: FlowController {
 }
 
 extension ArticleListFlowController {
-    func getListOfArticles() {
+    private func getListOfArticles() {
         model = ArticleListModel()
         model?.getArticles { [weak self] (articles, error) in
             if let error = error {
@@ -38,14 +39,15 @@ extension ArticleListFlowController {
         }
     }
     
-    func displayErrorAlert(for error: Error) {
+    private func displayErrorAlert(for error: Error) {
         let errorAlert = UIAlertController(title: "Error retrieving articles", message: error.localizedDescription, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true, completion: nil)
     }
     
-    func displayArticleList(with articles: [Article]) {
+    private func displayArticleList(with articles: [Article]) {
+        reportEventDidViewArticleList()
         let articleListVM = ArticleListViewModel(with: articles)
         let articleListVC = ArticleListViewController(with: articleListVM, delegate: self)
         transition(to: articleListVC)
@@ -64,6 +66,7 @@ extension ArticleListFlowController: ArticleSelectionDelegate {
     }
     
     func articleList(viewController controller: ArticleListViewController, didSelectArticle article: Article) {
+        reportEventDidSelect(article: article)
         let singleArticleFlow = SingleArticleFlowController(with: navController)
         singleArticleFlow.delegate = self
         add(childFlow: singleArticleFlow)
@@ -75,4 +78,21 @@ extension ArticleListFlowController: SingleArticleFlow {
     func returningFrom(flowController: SingleArticleFlowController) {
         remove(childFlow: flowController)
     } 
+}
+
+// Analytics
+extension ArticleListFlowController {
+    private func reportEventDidSelect(article: Article) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(article.id)",
+            AnalyticsParameterItemName: article.title,
+            AnalyticsParameterContentType: "article"
+            ])
+    }
+    
+    private func reportEventDidViewArticleList() {
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterItemCategory: "article"
+            ])
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 import TTTAttributedLabel
 import Lightbox
 import Imaginary
+import FirebaseAnalytics
 
 class SingleArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
@@ -62,8 +63,10 @@ extension SingleArticleViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        reportEventDidSelect(media: media[indexPath.item])
         let controller = LightboxController(images: lightboxImages, startIndex: indexPath.item)
         controller.dynamicBackground = true
+        controller.pageDelegate = self
         present(controller, animated: true, completion: nil)
     }
 }
@@ -73,5 +76,30 @@ extension SingleArticleViewController {
         return media.map({ (media) -> LightboxImage in
             LightboxImage(imageURL: URL(string: media.fullPath)!, text: media.caption, videoURL: nil)
         })
+    }
+}
+
+extension SingleArticleViewController: LightboxControllerPageDelegate {
+    func lightboxController(_ controller: LightboxController, didMoveToPage page: Int) {
+        reportEventDidView(media: media[page])
+    }
+}
+
+// Analytics
+extension SingleArticleViewController {
+    private func reportEventDidSelect(media: Media) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(media.id)",
+            AnalyticsParameterItemName: media.title,
+            AnalyticsParameterContentType: "media"
+            ])
+    }
+    
+    private func reportEventDidView(media: Media) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(media.id)",
+            AnalyticsParameterItemName: media.title,
+            AnalyticsParameterContentType: "media"
+            ])
     }
 }

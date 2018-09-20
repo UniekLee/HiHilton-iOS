@@ -6,6 +6,8 @@
 //  Copyright © 2018 UniekLee. All rights reserved.
 //
 
+import FirebaseAnalytics
+
 protocol SingleArticleFlow: AnyObject {
     func returningFrom(flowController: SingleArticleFlowController)
 }
@@ -39,8 +41,20 @@ extension SingleArticleFlowController {
         guard let articleId = article?.id else { return }
         ArticleMediaModel.getMedia(for: articleId) { [weak self] (media, error) in
             guard let article = self?.article else { return }
+            self?.reportEventDidView(article: article)
             let singleArticleVC = SingleArticleViewController(with: article, media: media)
             self?.transition(to: singleArticleVC)
         }
+    }
+}
+
+// Analytics
+extension SingleArticleFlowController {
+    private func reportEventDidView(article: Article) {
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterItemID: "id-\(article.id)",
+            AnalyticsParameterItemName: article.title,
+            AnalyticsParameterContentType: "article"
+            ])
     }
 }
