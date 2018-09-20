@@ -68,6 +68,7 @@
 		9B46506A2153C697008969AD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		9B46506C2153CB04008969AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B46506F2153E7BB008969AD /* SingleArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleModel.swift; sourceTree = "<group>"; };
+		9B4650732153F412008969AD /* HiHilton.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiHilton.entitlements; sourceTree = "<group>"; };
 		9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleArticleGalleryImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9B49823021447903004EBBA2 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		9B1593F62097239000B8B923 /* HiHilton */ = {
 			isa = PBXGroup;
 			children = (
+				9B4650732153F412008969AD /* HiHilton.entitlements */,
 				9B1593F72097239000B8B923 /* AppDelegate.swift */,
 				9BB1141E2143EB4400E6CD6A /* HiHilton.swift */,
 				9B15940F209762AB00B8B923 /* Scenes */,
@@ -362,6 +364,11 @@
 				TargetAttributes = {
 					9B1593F32097239000B8B923 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -649,6 +656,7 @@
 			baseConfigurationReference = 960248DDCAAA4925CCE7ABFA /* Pods-HiHilton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiHilton/HiHilton.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = TLD24BM42Z;
@@ -669,6 +677,7 @@
 			baseConfigurationReference = E815BFDD844FACF076D1EC01 /* Pods-HiHilton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiHilton/HiHilton.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLD24BM42Z;
 				INFOPLIST_FILE = HiHilton/Info.plist;

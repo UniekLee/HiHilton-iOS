@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDynamicLinks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +52,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        let handled = DynamicLinks.dynamicLinks().handleUniversalLink(userActivity.webpageURL!) { [weak self] (dynamicLink, error) in
+            guard let link = dynamicLink else { return }
+            self?.handleDynamic(link: link)
+        }
+        
+        return handled
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        return application(app, open: url,
+                           sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                           annotation: "")
+    }
+    
+    func application(_ application: UIApplication,
+                     open url: URL,
+                     sourceApplication: String?,
+                     annotation: Any) -> Bool {
+        if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url) {
+            handleDynamic(link: dynamicLink)
+            return true
+        }
+        return false
+    }
+    
+    func handleDynamic(link: DynamicLink) {
+        if let url = link.url {
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            if components?.host == "hilton.swiftetc.com" {
+                guard
+                    let postType = components?.queryItems?.filter({ $0.name == "post_type"}).first?.value,
+                    postType == "articles",
+                    let articleIdString = components?.queryItems?.filter({ $0.name == "p"}).first?.value,
+                    let articleId = Int(articleIdString)
+                    else { return }
+                appFlow?.showArticle(with: articleId)
+            }
+        }
+    }
 }
 

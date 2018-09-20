@@ -12,6 +12,9 @@ PODS:
     - FirebaseAnalytics (= 5.1.4)
   - Firebase/CoreOnly (5.8.1):
     - FirebaseCore (= 5.1.3)
+  - Firebase/DynamicLinks (5.8.1):
+    - Firebase/Core
+    - FirebaseDynamicLinks (= 3.0.2)
   - FirebaseAnalytics (5.1.4):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -29,6 +32,8 @@ PODS:
   - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (5.1.3):
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDynamicLinks (3.0.2):
+    - FirebaseAnalytics (~> 5.1)
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
@@ -79,6 +84,7 @@ DEPENDENCIES:
   - Fabric (~> 1.7.11)
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/DynamicLinks
   - Lightbox
   - RealmSwift
   - TTTAttributedLabel
@@ -94,6 +100,7 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseDynamicLinks
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
@@ -116,6 +123,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
+  FirebaseDynamicLinks: eb41fb20677b0a6e944b47f45cbe59f388e9e5cc
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
   GoogleAppMeasurement: 7d2552cea4e12d09ce737ef0441887a746585ff3
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
@@ -128,6 +136,6 @@ SPEC CHECKSUMS:
   RealmSwift: f40a747beaea1cadde7dcef41ee5a34b3001677b
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: fde2fe04a46eea2acf724648a085026e9c9ba4c5
+PODFILE CHECKSUM: 97d44ac1991ee69aa7d4cb82da270bed19812c81
 
 COCOAPODS: 1.5.3

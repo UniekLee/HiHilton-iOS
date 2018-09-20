@@ -20,6 +20,9 @@ class AppFlowController: FlowControllable {
     }()
     weak var navController: UINavigationController?
     
+    private var started: Bool = false
+    private var waitingArticleId: Int?
+    
     init(with window: UIWindow) {
         self.window = window
         childFlows = []
@@ -29,12 +32,21 @@ class AppFlowController: FlowControllable {
         let greetingVC = GreetingViewController(nibName: String(describing: GreetingViewController.self), bundle: HiHilton)
         window.rootViewController = greetingVC
         window.makeKeyAndVisible()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             greetingVC.completeGreeting()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [unowned self] in
             self.window.rootViewController = self.appNavController
-            self.goToArticleList()
+            self.completeStart()
+        }
+    }
+    
+    private func completeStart() {
+        goToArticleList()
+        started = true
+        if let articleId = waitingArticleId {
+            showArticle(with: articleId)
         }
     }
 }
@@ -44,5 +56,25 @@ extension AppFlowController {
         let articleListFlow = ArticleListFlowController(with: appNavController)
         add(childFlow: articleListFlow)
         articleListFlow.start()
+    }
+}
+
+// Dynamic Linking
+extension AppFlowController {
+    func showArticle(with articleId: Int) {
+        guard started else {
+            waitingArticleId = articleId
+            return
+        }
+        let singleArticleFlow = SingleArticleFlowController(with: appNavController)
+        singleArticleFlow.delegate = self
+        add(childFlow: singleArticleFlow)
+        singleArticleFlow.start(with: articleId)
+    }
+}
+
+extension AppFlowController: SingleArticleFlow {
+    func returningFrom(flowController: SingleArticleFlowController) {
+        remove(childFlow: flowController)
     }
 }
