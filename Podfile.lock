@@ -15,6 +15,9 @@ PODS:
   - Firebase/DynamicLinks (5.8.1):
     - Firebase/Core
     - FirebaseDynamicLinks (= 3.0.2)
+  - Firebase/Messaging (5.8.1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.1.2)
   - FirebaseAnalytics (5.1.4):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -37,6 +40,11 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMessaging (3.1.2):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleUtilities/Reachability (~> 5.2)
+    - Protobuf (~> 3.1)
   - GoogleAppMeasurement (5.1.4):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -71,6 +79,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Protobuf (3.6.1)
   - Realm (3.4.0):
     - Realm/Headers (= 3.4.0)
   - Realm/Headers (3.4.0)
@@ -85,6 +94,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/DynamicLinks
+  - Firebase/Messaging
   - Lightbox
   - RealmSwift
   - TTTAttributedLabel
@@ -102,6 +112,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDynamicLinks
     - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -109,6 +120,7 @@ SPEC REPOS:
     - Imaginary
     - Lightbox
     - nanopb
+    - Protobuf
     - Realm
     - RealmSwift
     - TTTAttributedLabel
@@ -125,6 +137,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
   FirebaseDynamicLinks: eb41fb20677b0a6e944b47f45cbe59f388e9e5cc
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebaseMessaging: d6feeb06218d2675b4149b0ada925a6b707a74cf
   GoogleAppMeasurement: 7d2552cea4e12d09ce737ef0441887a746585ff3
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
@@ -132,10 +145,11 @@ SPEC CHECKSUMS:
   Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
   Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
   RealmSwift: f40a747beaea1cadde7dcef41ee5a34b3001677b
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 97d44ac1991ee69aa7d4cb82da270bed19812c81
+PODFILE CHECKSUM: 247a6441d217f6627aa7c93dbdceb7c16f0a8e72
 
 COCOAPODS: 1.5.3
