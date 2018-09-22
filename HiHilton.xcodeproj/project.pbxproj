@@ -21,6 +21,7 @@
 		9B4650702153E7BB008969AD /* SingleArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46506F2153E7BB008969AD /* SingleArticleModel.swift */; };
 		9B465078215625F7008969AD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B465076215625F7008969AD /* ErrorViewController.swift */; };
 		9B465079215625F7008969AD /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B465077215625F7008969AD /* ErrorViewController.xib */; };
+		9B46507B2156714B008969AD /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46507A2156714B008969AD /* DataDecoder.swift */; };
 		9B49822D21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */; };
 		9B49822E21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */; };
 		9B49823221447903004EBBA2 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B49823021447903004EBBA2 /* GreetingViewController.swift */; };
@@ -73,6 +74,7 @@
 		9B4650732153F412008969AD /* HiHilton.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiHilton.entitlements; sourceTree = "<group>"; };
 		9B465076215625F7008969AD /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		9B465077215625F7008969AD /* ErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
+		9B46507A2156714B008969AD /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleArticleGalleryImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9B49823021447903004EBBA2 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				9B15940A2097519B00B8B923 /* ArticlesRouter.swift */,
 				9BF91E2E214AE17600B100F3 /* MediaRouter.swift */,
 				9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */,
+				9B46507A2156714B008969AD /* DataDecoder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				9BB114142143E9CD00E6CD6A /* AppFlowController.swift in Sources */,
 				9BB114232144007900E6CD6A /* FlowControllable.swift in Sources */,
 				9BF91E29214ADA3400B100F3 /* NibLoadable.swift in Sources */,
+				9B46507B2156714B008969AD /* DataDecoder.swift in Sources */,
 				9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */,
 				9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */,
 				9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */,

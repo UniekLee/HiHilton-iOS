@@ -15,21 +15,16 @@ class ArticleMediaModel {
         Alamofire.request(ArticlesRouter.getMedia(articleId: articleId)).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
-                ArticleMediaModel.decodeMedia(data: data, completion: completion)
+                DataDecoder.shared.decode(data: data, toType: [Media].self, completion: { (media, error) in
+                    if let media = media {
+                        completion(Array(media),  error)
+                    } else {
+                        completion([], error)
+                    }
+                })
             case .failure(let error):
                 completion([], error)
             }
-        }
-    }
-    
-    private static func decodeMedia(data: Data, completion: @escaping ([Media], Error?) -> Void) {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        do {
-            let media = try decoder.decode([Media].self, from: data)
-            completion(Array(media), nil)
-        } catch let error {
-            completion([], error)
         }
     }
 }
