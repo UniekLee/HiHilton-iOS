@@ -22,7 +22,6 @@ class ArticleListFlowController: FlowController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Hilton"
-        display(LoadingViewController())
         getListOfArticles()
     }
 }
@@ -30,9 +29,14 @@ class ArticleListFlowController: FlowController {
 extension ArticleListFlowController {
     private func getListOfArticles() {
         model = ArticleListModel()
+        transition(to: LoadingViewController())
         model?.getArticles { [weak self] (articles, error) in
-            if let error = error {
-                self?.displayErrorAlert(for: error)
+            if error != nil && articles.count == 0 {
+                let errorVC = ErrorViewController(nibName: nil, bundle: nil)
+                errorVC.tryAgainHandler = {
+                    self?.getListOfArticles()
+                }
+                self?.transition(to: errorVC)
                 return
             }
             self?.displayArticleList(with: articles)

@@ -19,6 +19,8 @@
 		9B46506B2153C697008969AD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46506A2153C697008969AD /* DateFormatter.swift */; };
 		9B46506D2153CB04008969AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B46506C2153CB04008969AD /* GoogleService-Info.plist */; };
 		9B4650702153E7BB008969AD /* SingleArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46506F2153E7BB008969AD /* SingleArticleModel.swift */; };
+		9B465078215625F7008969AD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B465076215625F7008969AD /* ErrorViewController.swift */; };
+		9B465079215625F7008969AD /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B465077215625F7008969AD /* ErrorViewController.xib */; };
 		9B49822D21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */; };
 		9B49822E21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */; };
 		9B49823221447903004EBBA2 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B49823021447903004EBBA2 /* GreetingViewController.swift */; };
@@ -69,6 +71,8 @@
 		9B46506C2153CB04008969AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B46506F2153E7BB008969AD /* SingleArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleModel.swift; sourceTree = "<group>"; };
 		9B4650732153F412008969AD /* HiHilton.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiHilton.entitlements; sourceTree = "<group>"; };
+		9B465076215625F7008969AD /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		9B465077215625F7008969AD /* ErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
 		9B49822B21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleGalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleArticleGalleryImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9B49823021447903004EBBA2 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 			children = (
 				9BB1141A2143EB0C00E6CD6A /* LoadingViewController.swift */,
 				9BB1141B2143EB0C00E6CD6A /* LoadingViewController.xib */,
+				9B465076215625F7008969AD /* ErrorViewController.swift */,
+				9B465077215625F7008969AD /* ErrorViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				9B49823321447903004EBBA2 /* GreetingViewController.xib in Resources */,
 				9B1593FF2097239300B8B923 /* Assets.xcassets in Resources */,
 				9BF91E25214AD7FC00B100F3 /* ArticleTableViewCell.xib in Resources */,
+				9B465079215625F7008969AD /* ErrorViewController.xib in Resources */,
 				9BB1142B2144086A00E6CD6A /* SingleArticleViewController.xib in Resources */,
 				9BB1141D2143EB0C00E6CD6A /* LoadingViewController.xib in Resources */,
 			);
@@ -498,6 +505,7 @@
 				9BB114292144073600E6CD6A /* SingleArticleFlowController.swift in Sources */,
 				9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */,
 				9BB1141C2143EB0C00E6CD6A /* LoadingViewController.swift in Sources */,
+				9B465078215625F7008969AD /* ErrorViewController.swift in Sources */,
 				9BF91E31214AE1CE00B100F3 /* NetworkRouter.swift in Sources */,
 				9BB114142143E9CD00E6CD6A /* AppFlowController.swift in Sources */,
 				9BB114232144007900E6CD6A /* FlowControllable.swift in Sources */,
