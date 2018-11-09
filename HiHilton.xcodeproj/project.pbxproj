@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76E3734BDA93EE641F135CDC /* Pods_HiHilton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1A10E5DBC91B71A5DCECFB /* Pods_HiHilton.framework */; };
 		9B1593F82097239000B8B923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1593F72097239000B8B923 /* AppDelegate.swift */; };
 		9B1593FA2097239000B8B923 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1593F92097239000B8B923 /* ArticleListViewController.swift */; };
 		9B1593FF2097239300B8B923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1593FE2097239300B8B923 /* Assets.xcassets */; };
@@ -53,11 +52,13 @@
 		9BF91E2D214AE0E900B100F3 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */; };
 		9BF91E2F214AE17600B100F3 /* MediaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E2E214AE17600B100F3 /* MediaRouter.swift */; };
 		9BF91E31214AE1CE00B100F3 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */; };
+		BCD28DE03E01B6275EB90960 /* Pods_HiHilton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D4474066ADB54607270F93 /* Pods_HiHilton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E1A10E5DBC91B71A5DCECFB /* Pods_HiHilton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiHilton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		960248DDCAAA4925CCE7ABFA /* Pods-HiHilton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiHilton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton.debug.xcconfig"; sourceTree = "<group>"; };
+		00BC2450CB463D8314F22B7C /* Pods-HiHilton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiHilton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton.debug.xcconfig"; sourceTree = "<group>"; };
+		56D4474066ADB54607270F93 /* Pods_HiHilton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiHilton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		599F0CE528AFF4C5AAB2754D /* Pods-HiHilton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiHilton.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton.release.xcconfig"; sourceTree = "<group>"; };
 		9B1593F42097239000B8B923 /* HiHilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiHilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1593F72097239000B8B923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B1593F92097239000B8B923 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		9BF91E2E214AE17600B100F3 /* MediaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRouter.swift; sourceTree = "<group>"; };
 		9BF91E30214AE1CE00B100F3 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		E815BFDD844FACF076D1EC01 /* Pods-HiHilton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiHilton.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,20 +114,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76E3734BDA93EE641F135CDC /* Pods_HiHilton.framework in Frameworks */,
+				BCD28DE03E01B6275EB90960 /* Pods_HiHilton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		271F6B85BB18EA3BBA681614 /* Pods */ = {
+		6414F03502CA37EFF7E666B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				960248DDCAAA4925CCE7ABFA /* Pods-HiHilton.debug.xcconfig */,
-				E815BFDD844FACF076D1EC01 /* Pods-HiHilton.release.xcconfig */,
+				56D4474066ADB54607270F93 /* Pods_HiHilton.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9B1593EB2097239000B8B923 = {
@@ -135,8 +134,8 @@
 			children = (
 				9B1593F62097239000B8B923 /* HiHilton */,
 				9B1593F52097239000B8B923 /* Products */,
-				271F6B85BB18EA3BBA681614 /* Pods */,
-				ABFABF62A9C7CB3F61817DF3 /* Frameworks */,
+				CF0031E5B4D1EF6512DCF6AA /* Pods */,
+				6414F03502CA37EFF7E666B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -330,12 +329,13 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		ABFABF62A9C7CB3F61817DF3 /* Frameworks */ = {
+		CF0031E5B4D1EF6512DCF6AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E1A10E5DBC91B71A5DCECFB /* Pods_HiHilton.framework */,
+				00BC2450CB463D8314F22B7C /* Pods-HiHilton.debug.xcconfig */,
+				599F0CE528AFF4C5AAB2754D /* Pods-HiHilton.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,12 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B1594062097239300B8B923 /* Build configuration list for PBXNativeTarget "HiHilton" */;
 			buildPhases = (
-				85390A0BD821F2812B4E65B4 /* [CP] Check Pods Manifest.lock */,
+				B471B761A3A32215F68C98AD /* [CP] Check Pods Manifest.lock */,
 				9B1593F02097239000B8B923 /* Sources */,
 				9B1593F12097239000B8B923 /* Frameworks */,
 				9B1593F22097239000B8B923 /* Resources */,
-				8F42AD695DE59748D6BCB539 /* [CP] Embed Pods Frameworks */,
 				9B46506E2153CDDC008969AD /* Start Fabric */,
+				AE95342481D9BBCBB57AA746 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,6 +373,7 @@
 				TargetAttributes = {
 					9B1593F32097239000B8B923 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -422,64 +423,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		85390A0BD821F2812B4E65B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiHilton-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F42AD695DE59748D6BCB539 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
-				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
-				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9B46506E2153CDDC008969AD /* Start Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,6 +436,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
+		AE95342481D9BBCBB57AA746 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
+				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B471B761A3A32215F68C98AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiHilton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -670,7 +677,7 @@
 		};
 		9B1594072097239300B8B923 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 960248DDCAAA4925CCE7ABFA /* Pods-HiHilton.debug.xcconfig */;
+			baseConfigurationReference = 00BC2450CB463D8314F22B7C /* Pods-HiHilton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HiHilton/HiHilton.entitlements;
@@ -684,14 +691,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.unieklee.Hilton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		9B1594082097239300B8B923 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E815BFDD844FACF076D1EC01 /* Pods-HiHilton.release.xcconfig */;
+			baseConfigurationReference = 599F0CE528AFF4C5AAB2754D /* Pods-HiHilton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HiHilton/HiHilton.entitlements;
@@ -704,7 +711,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.unieklee.Hilton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

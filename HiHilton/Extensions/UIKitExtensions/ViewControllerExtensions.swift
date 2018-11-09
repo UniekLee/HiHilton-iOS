@@ -8,20 +8,20 @@
 
 extension UIViewController {
     func transition(to child: UIViewController, duration: Double = 0.3, completion: ((Bool) -> Void)? = nil) {
-        let current = childViewControllers.last
-        addChildViewController(child)
+        let current = children.last
+        addChild(child)
         
         let newView = child.view!
         newView.translatesAutoresizingMaskIntoConstraints = true
         newView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         newView.frame = view.bounds
-        let animation = UIViewAnimationOptions.transitionCrossDissolve
+        let animation = UIView.AnimationOptions.transitionCrossDissolve
         if let existing = current {
-            existing.willMove(toParentViewController: nil)
+            existing.willMove(toParent: nil)
             
             transition(from: existing, to: child, duration: duration, options: [animation], animations: { }, completion: { done in
-                existing.removeFromParentViewController()
-                child.didMove(toParentViewController: self)
+                existing.removeFromParent()
+                child.didMove(toParent: self)
                 completion?(done)
             })
             
@@ -29,7 +29,7 @@ extension UIViewController {
             view.addSubview(newView)
             
             UIView.animate(withDuration: duration, delay: 0, options: [animation], animations: { }, completion: { done in
-                child.didMove(toParentViewController: self)
+                child.didMove(toParent: self)
                 completion?(done)
             })
         }

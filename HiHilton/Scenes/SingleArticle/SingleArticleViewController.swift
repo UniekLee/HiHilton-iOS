@@ -35,7 +35,7 @@ class SingleArticleViewController: UIViewController {
         galleryCollectionView.register(SingleArticleGalleryImageCollectionViewCell.nib, forCellWithReuseIdentifier: "thumbnailCell")
         updateViewContent()
         LightboxConfig.PageIndicator.separatorColor = .clear
-        LightboxConfig.PageIndicator.textAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        LightboxConfig.PageIndicator.textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
     func updateViewContent() {

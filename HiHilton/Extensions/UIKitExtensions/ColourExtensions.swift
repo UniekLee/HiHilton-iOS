@@ -6,8 +6,6 @@
 //  Copyright © 2018 UniekLee. All rights reserved.
 //
 
-import Hue
-
 extension UIColor {
     class var harcourtsNavy: UIColor {
         return UIColor(hex: "002B49")

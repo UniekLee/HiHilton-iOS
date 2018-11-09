@@ -30,7 +30,7 @@ extension AppDelegate {
 extension AppDelegate {
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         let handled = DynamicLinks.dynamicLinks().handleUniversalLink(userActivity.webpageURL!) { [weak self] (dynamicLink, error) in
             guard let link = dynamicLink else { return }
             self?.handleDynamic(link: link)
@@ -42,9 +42,9 @@ extension AppDelegate {
     @available(iOS 9.0, *)
     func application(_ app: UIApplication,
                      open url: URL,
-                     options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return application(app, open: url,
-                           sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                           sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                            annotation: "")
     }
     

@@ -39,7 +39,7 @@ class ArticleTableViewCell: UITableViewCell {
         guard let article = article else { return }
         titleLabel.text = article.title
         dateLabel.text = DateFormatter.articleListDateFormater.string(from: article.date ?? Date())
-        excerptLabel.setHTML(text: article.excerpt, withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15, weight: .light)])
+        excerptLabel.setHTML(text: article.excerpt, withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .light)])
     }
     
     override func prepareForReuse() {
