@@ -16,6 +16,7 @@ class AppFlowController: FlowControllable {
     lazy var appNavController: UINavigationController = {
         let rootView = UIViewController()
         let nav = UINavigationController(rootViewController: rootView)
+        nav.navigationBar.prefersLargeTitles = true
         return nav
     }()
     weak var navController: UINavigationController?

@@ -33,6 +33,11 @@ class ArticleListViewController: UITableViewController {
         setUpTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     func setUpTableView() {
         setUpRefreshController()
         tableView.prefetchDataSource = self
@@ -47,6 +52,14 @@ class ArticleListViewController: UITableViewController {
     
     @IBAction func pulledToRefresh(_ sender: UIRefreshControl) {
         delegate?.didPullToRefreshArticleList(viewController: self)
+    }
+}
+
+// Filtering
+extension ArticleListViewController {
+    public func filterArticles(using keyword: String) {
+        viewModel.filterArticles(using: keyword)
+        tableView.reloadData()
     }
 }
 

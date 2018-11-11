@@ -14,6 +14,8 @@ protocol ArticleFlowControllerCommands {
 
 class ArticleListFlowController: FlowController {
     var model: ArticleListModel?
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var articleListVC: ArticleListViewController?
     
     override func start() {
         navController?.setViewControllers([self], animated: true)
@@ -21,8 +23,29 @@ class ArticleListFlowController: FlowController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Hilton"
+        title = "ARTICLES"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.largeTitleDisplayMode = .always
         getListOfArticles()
+    }
+}
+
+// Search
+extension ArticleListFlowController {
+    func setUpSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Articles"
+        searchController.searchBar.tintColor = .harcourtsNavy
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+}
+
+extension ArticleListFlowController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchString = searchController.searchBar.text else { return }
+        articleListVC?.filterArticles(using: searchString)
     }
 }
 
@@ -52,9 +75,12 @@ extension ArticleListFlowController {
     
     private func displayArticleList(with articles: [Article]) {
         reportEventDidViewArticleList()
+        setUpSearchController()
         let articleListVM = ArticleListViewModel(with: articles)
-        let articleListVC = ArticleListViewController(with: articleListVM, delegate: self)
-        transition(to: articleListVC)
+        articleListVC = ArticleListViewController(with: articleListVM, delegate: self)
+        if let controller = articleListVC {
+            transition(to: controller)
+        }
     }
 }
 

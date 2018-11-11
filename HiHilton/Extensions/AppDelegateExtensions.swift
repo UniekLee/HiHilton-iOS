@@ -15,9 +15,9 @@ extension AppDelegate {
     }
     
     func setUpNavigationBar() {
-        UINavigationBar.appearance().barTintColor = .harcourtsNavy
-        UINavigationBar.appearance().tintColor = .harcourtsWhite
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.harcourtsWhite]
+        UINavigationBar.appearance().barTintColor = .harcourtsWhite
+        UINavigationBar.appearance().tintColor = .harcourtsNavy
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.harcourtsNavy]
         UIApplication.shared.statusBarStyle = .lightContent
     }
     

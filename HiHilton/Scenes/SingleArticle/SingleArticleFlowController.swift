@@ -29,7 +29,8 @@ class SingleArticleFlowController: FlowController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Article"
+        title = nil
+        navigationItem.largeTitleDisplayMode = .never
         display(LoadingViewController())
         getArticleDetails()
     }

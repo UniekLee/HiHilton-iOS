@@ -25,6 +25,7 @@
 		9B49822E21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */; };
 		9B49823221447903004EBBA2 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B49823021447903004EBBA2 /* GreetingViewController.swift */; };
 		9B49823321447903004EBBA2 /* GreetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B49823121447903004EBBA2 /* GreetingViewController.xib */; };
+		9B6C239E2196D1CB003D1619 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C239D2196D1CB003D1619 /* SearchBar.swift */; };
 		9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */; };
 		9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */; };
 		9BB113FF2143E15B00E6CD6A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */; };
@@ -80,6 +81,7 @@
 		9B49822C21441FA1004EBBA2 /* SingleArticleGalleryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleArticleGalleryImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9B49823021447903004EBBA2 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		9B49823121447903004EBBA2 /* GreetingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreetingViewController.xib; sourceTree = "<group>"; };
+		9B6C239D2196D1CB003D1619 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
 		9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */,
 				9BF91E2A214ADA5C00B100F3 /* TableViewCellExtensions.swift */,
 				9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */,
+				9B6C239D2196D1CB003D1619 /* SearchBar.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6C239E2196D1CB003D1619 /* SearchBar.swift in Sources */,
 				9BB1142F2144123100E6CD6A /* Media.swift in Sources */,
 				9BF91E24214AD7FC00B100F3 /* ArticleTableViewCell.swift in Sources */,
 				9B15940E209753B900B8B923 /* Article.swift in Sources */,

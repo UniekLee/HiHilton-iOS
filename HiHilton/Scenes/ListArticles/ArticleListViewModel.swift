@@ -11,28 +11,57 @@ import RealmSwift
 import Alamofire
 
 class ArticleListViewModel {
-    var articles: [Article]
+    var articles: [Article] {
+        didSet {
+            updateFilteredArticles()
+        }
+    }
+    var keyword: String? {
+        didSet {
+            updateFilteredArticles()
+        }
+    }
+    private var filteredArticles: [Article]
+    
+    private func updateFilteredArticles() {
+        filteredArticles = articles.filter() { article -> Bool in
+            guard let safeKeyword = keyword?.lowercased(), !safeKeyword.isEmpty else { return true }
+            
+            let titleContainsKeyword = (article.title?.lowercased().contains(safeKeyword) == true)
+            let contentContainsKeyword = (article.content?.lowercased().contains(safeKeyword) == true)
+            
+            return titleContainsKeyword || contentContainsKeyword
+        }
+    }
     
     var numberOfItems: Int {
-        return articles.count
+        return filteredArticles.count
     }
     
     init(with articles: [Article]) {
+        self.filteredArticles = []
         self.articles = articles
+        updateFilteredArticles()
     }
     
     func article(for item: Int) -> Article {
-        return articles[item]
+        return filteredArticles[item]
     }
     
     func fetchImagePaths(for items: [Int]) {
         for item in items {
-            fetchImagePath(for: articles[item])
+            fetchImagePath(for: filteredArticles[item])
         }
     }
     
     func imagePath(for article: Article, completion: @escaping (_ imagePath: String?) -> Void) {
         fetchImagePath(for: article, completion: completion)
+    }
+}
+
+extension ArticleListViewModel {
+    public func filterArticles(using keyword: String) {
+        self.keyword = keyword
     }
 }
 
