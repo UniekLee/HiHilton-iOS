@@ -27,7 +27,7 @@ struct Style {
         
         struct Article {
             static let date = UIFont.TextStyle.subheadline
-            static let title = UIFont.TextStyle.title2
+            static let title = UIFont.TextStyle.title3
             static let excerpt = UIFont.TextStyle.callout
         }
     }

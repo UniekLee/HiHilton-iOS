@@ -40,6 +40,7 @@ class ArticleListViewController: UITableViewController {
     
     func setUpTableView() {
         setUpRefreshController()
+        tableView.separatorStyle = .none
         tableView.prefetchDataSource = self
         tableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: "articleCell")
     }

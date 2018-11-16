@@ -37,7 +37,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     func populateContent() {
         guard let article = article else { return }
-        dateLabel.text = DateFormatter.articleListDateFormater.string(from: article.date ?? Date())
+        dateLabel.text = DateFormatter.articleListDateFormater.string(from: article.date ?? Date()).uppercased()
         dateLabel.setTextStyle(as: Style.ArticleList.Article.date)
         
         titleLabel.text = article.title
