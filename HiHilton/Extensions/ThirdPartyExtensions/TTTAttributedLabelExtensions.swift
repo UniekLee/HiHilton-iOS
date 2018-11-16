@@ -14,7 +14,7 @@ extension TTTAttributedLabel {
             guard let attributedString = newValue?.attributedStringFromHTML else { return }
             setHTML(text: attributedString,
                     withAttributes: [
-                        NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .light)
+                        NSAttributedString.Key.font : Font.forStyle(Style.SingleArticle.content)
                 ]
             )
         }
@@ -26,11 +26,13 @@ extension TTTAttributedLabel {
     func setHTML(text: NSMutableAttributedString, withAttributes attributes: [NSAttributedString.Key : Any]) {
         text.addAttributes(attributes, range: text.wholeString)
         attributedText = text
+        adjustsFontForContentSizeCategory = true
     }
     
     func setHTML(text: String?, withAttributes attributes: [NSAttributedString.Key : Any]) {
         guard let attributedString = text?.attributedStringFromHTML else { return }
         attributedString.addAttributes(attributes, range: attributedString.wholeString)
         attributedText = attributedString
+        adjustsFontForContentSizeCategory = true
     }
 }

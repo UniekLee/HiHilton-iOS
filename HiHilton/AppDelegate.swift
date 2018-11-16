@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         authenticateUser()
         setUpStyling()
         registerForPushNotifications(application)
-        UIApplication.shared.isStatusBarHidden = false
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         guard let window = window else { return false }

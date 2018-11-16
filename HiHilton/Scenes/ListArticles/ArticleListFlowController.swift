@@ -26,7 +26,14 @@ class ArticleListFlowController: FlowController {
         title = "ARTICLES"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.hidesSearchBarWhenScrolling = true
         getListOfArticles()
+    }
+}
+
+extension ArticleListFlowController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
 }
 
