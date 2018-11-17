@@ -42,8 +42,10 @@ class ArticleTableViewCell: UITableViewCell {
         
         titleLabel.text = article.title
         titleLabel.setTextStyle(as: Style.ArticleList.Article.title)
+        titleLabel.textColor = .harcourtsNavy
         
-        excerptLabel.setHTML(text: article.excerpt, withAttributes: [NSAttributedString.Key.font : Font.forStyle(Style.ArticleList.Article.excerpt)])
+        excerptLabel.setHTML(text: article.excerpt,
+                             withAttributes: [NSAttributedString.Key.font : Font.forStyle(Style.ArticleList.Article.excerpt)])
         excerptLabel.adjustsFontForContentSizeCategory = true
     }
     

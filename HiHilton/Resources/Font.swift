@@ -23,7 +23,9 @@ extension Font {
 
 struct Style {
     struct ArticleList {
-        static let header = UIFont.TextStyle.title1
+        static let largeTitle = UIFont.TextStyle.largeTitle
+        static let smallTitle = UIFont.TextStyle.title3
+        static let searchBarPlaceholder = UIFont.TextStyle.callout
         
         struct Article {
             static let date = UIFont.TextStyle.subheadline
@@ -33,7 +35,7 @@ struct Style {
     }
     
     struct SingleArticle {
-        static let title = UIFont.TextStyle.title1
+        static let largeTitle = UIFont.TextStyle.largeTitle
         static let content = UIFont.TextStyle.body
     }
 }

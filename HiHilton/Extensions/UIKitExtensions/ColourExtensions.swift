@@ -18,4 +18,8 @@ extension UIColor {
     class var harcourtsWhite: UIColor {
         return UIColor(white: 1, alpha: 1)
     }
+    
+    class var harcourtsBlack: UIColor {
+        return UIColor(white: 0, alpha: 1)
+    }
 }

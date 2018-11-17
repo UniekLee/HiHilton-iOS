@@ -17,8 +17,13 @@ extension AppDelegate {
     func setUpNavigationBar() {
         UINavigationBar.appearance().barTintColor = .harcourtsWhite
         UINavigationBar.appearance().tintColor = .harcourtsNavy
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.harcourtsNavy]
         UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.harcourtsNavy,
+             NSAttributedString.Key.font : Font.forStyle(Style.ArticleList.largeTitle)]
+        UINavigationBar.appearance().titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.harcourtsNavy,
+             NSAttributedString.Key.font : Font.forStyle(Style.ArticleList.smallTitle)]
     }
     
     func authenticateUser() {

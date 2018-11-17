@@ -41,7 +41,8 @@ class SingleArticleViewController: UIViewController {
     func updateViewContent() {
         loadViewIfNeeded()
         titleLabel.text = article.title
-        titleLabel.setTextStyle(as: Style.SingleArticle.title)
+        titleLabel.setTextStyle(as: Style.SingleArticle.largeTitle)
+        titleLabel.textColor = .harcourtsNavy
         contentLabel.htmlText = article.content
         galleryCollectionView.reloadData()
         galleryContainerView.isHidden = media.count == 0

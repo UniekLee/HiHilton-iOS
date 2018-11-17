@@ -40,6 +40,7 @@
 		9BA0D02F219DE44C0024273C /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA0D023219DE44B0024273C /* SourceSansPro-Light.ttf */; };
 		9BA0D031219DE64A0024273C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0D030219DE64A0024273C /* Font.swift */; };
 		9BA0D033219E8ABC0024273C /* SourceSansPro.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BA0D032219E8ABC0024273C /* SourceSansPro.plist */; };
+		9BA0D050219F245C0024273C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0D04F219F245C0024273C /* ViewExtensions.swift */; };
 		9BA27B1F2098A5A800DB2EAC /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */; };
 		9BB113FD2143E13D00E6CD6A /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */; };
 		9BB113FF2143E15B00E6CD6A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */; };
@@ -110,6 +111,7 @@
 		9BA0D023219DE44B0024273C /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		9BA0D030219DE64A0024273C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		9BA0D032219E8ABC0024273C /* SourceSansPro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SourceSansPro.plist; path = HiHilton/SourceSansPro.plist; sourceTree = SOURCE_ROOT; };
+		9BA0D04F219F245C0024273C /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		9BA27B1E2098A5A800DB2EAC /* SingleArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		9BB113FC2143E13D00E6CD6A /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
 		9BB113FE2143E15B00E6CD6A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				9BF91E2A214ADA5C00B100F3 /* TableViewCellExtensions.swift */,
 				9BF91E2C214AE0E900B100F3 /* UIImageViewExtensions.swift */,
 				9B6C239D2196D1CB003D1619 /* SearchBar.swift */,
+				9BA0D04F219F245C0024273C /* ViewExtensions.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				9BA0D031219DE64A0024273C /* Font.swift in Sources */,
 				9BB114022143E18F00E6CD6A /* TTTAttributedLabelExtensions.swift in Sources */,
 				9BB114292144073600E6CD6A /* SingleArticleFlowController.swift in Sources */,
+				9BA0D050219F245C0024273C /* ViewExtensions.swift in Sources */,
 				9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */,
 				9BB1141C2143EB0C00E6CD6A /* LoadingViewController.swift in Sources */,
 				9B465078215625F7008969AD /* ErrorViewController.swift in Sources */,
