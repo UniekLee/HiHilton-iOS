@@ -12,6 +12,10 @@ import Lightbox
 import Imaginary
 import FirebaseAnalytics
 
+protocol SingleArticleDelegate: AnyObject {
+    func userDidSelectLink(with url: URL)
+}
+
 class SingleArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: TTTAttributedLabel!
@@ -20,10 +24,12 @@ class SingleArticleViewController: UIViewController {
     
     var article: Article
     var media: [Media]
+    weak var delegate: SingleArticleDelegate?
     
-    init(with article: Article, media: [Media] = []) {
+    init(with article: Article, media: [Media] = [], delegate: SingleArticleDelegate) {
         self.article = article
         self.media = media
+        self.delegate = delegate
         super.init(nibName: String(describing: SingleArticleViewController.self), bundle: HiHilton)
     }
     
@@ -33,19 +39,46 @@ class SingleArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryCollectionView.register(SingleArticleGalleryImageCollectionViewCell.nib, forCellWithReuseIdentifier: "thumbnailCell")
+        updateViewStyling()
         updateViewContent()
         LightboxConfig.PageIndicator.separatorColor = .clear
         LightboxConfig.PageIndicator.textAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
+    func updateViewStyling() {
+        titleLabel.setTextStyle(as: Style.SingleArticle.largeTitle)
+        titleLabel.textColor = .harcourtsNavy
+        
+        contentLabel.linkAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.harcourtsNavy,
+            NSAttributedString.Key.underlineStyle : 0,
+            NSAttributedString.Key.font : Font.forStyle(Style.SingleArticle.boldContent)]
+        contentLabel.activeLinkAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.harcourtsNavy,
+            NSAttributedString.Key.underlineStyle : 0,
+            NSAttributedString.Key.font : Font.forStyle(Style.SingleArticle.boldContent)]
+        contentLabel.inactiveLinkAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.harcourtsNavy,
+            NSAttributedString.Key.underlineStyle : 0,
+            NSAttributedString.Key.font : Font.forStyle(Style.SingleArticle.boldContent)]
+        
+        contentLabel.delegate = self
+        contentLabel.extendsLinkTouchArea = true
+    }
+    
     func updateViewContent() {
         loadViewIfNeeded()
         titleLabel.text = article.title
-        titleLabel.setTextStyle(as: Style.SingleArticle.largeTitle)
-        titleLabel.textColor = .harcourtsNavy
         contentLabel.htmlText = article.content
         galleryCollectionView.reloadData()
         galleryContainerView.isHidden = media.count == 0
+    }
+}
+
+extension SingleArticleViewController: TTTAttributedLabelDelegate {
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
+        guard let safeURL = url else { return }
+        delegate?.userDidSelectLink(with: safeURL)
     }
 }
 

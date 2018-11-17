@@ -7,6 +7,7 @@
 //
 
 import FirebaseAnalytics
+import SafariServices
 
 protocol SingleArticleFlow: AnyObject {
     func returningFrom(flowController: SingleArticleFlowController)
@@ -71,9 +72,12 @@ extension SingleArticleFlowController {
     
     private func getMedia(for articleId: Int) {
         ArticleMediaModel.getMedia(for: articleId) { [weak self] (media, error) in
-            guard let article = self?.article else { return }
+            guard
+                let strongSelf = self,
+                let article = self?.article
+                else { return }
             self?.reportEventDidView(article: article)
-            let singleArticleVC = SingleArticleViewController(with: article, media: media)
+            let singleArticleVC = SingleArticleViewController(with: article, media: media, delegate: strongSelf)
             self?.transition(to: singleArticleVC)
         }
     }
@@ -98,5 +102,13 @@ extension SingleArticleFlowController {
             AnalyticsParameterItemName: article.title ?? "",
             AnalyticsParameterContentType: "article"
             ])
+    }
+}
+
+extension SingleArticleFlowController: SingleArticleDelegate {
+    func userDidSelectLink(with url: URL) {
+        let controller = SFSafariViewController(url: url)
+        controller.preferredControlTintColor = .harcourtsNavy
+        present(controller, animated: true, completion: nil)
     }
 }

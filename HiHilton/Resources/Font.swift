@@ -37,6 +37,7 @@ struct Style {
     struct SingleArticle {
         static let largeTitle = UIFont.TextStyle.largeTitle
         static let content = UIFont.TextStyle.body
+        static let boldContent = UIFont.TextStyle.headline
     }
 }
 

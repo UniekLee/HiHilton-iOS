@@ -25,14 +25,14 @@ extension TTTAttributedLabel {
     
     func setHTML(text: NSMutableAttributedString, withAttributes attributes: [NSAttributedString.Key : Any]) {
         text.addAttributes(attributes, range: text.wholeString)
-        attributedText = text
+        setText(text)
         adjustsFontForContentSizeCategory = true
     }
     
     func setHTML(text: String?, withAttributes attributes: [NSAttributedString.Key : Any]) {
         guard let attributedString = text?.attributedStringFromHTML else { return }
         attributedString.addAttributes(attributes, range: attributedString.wholeString)
-        attributedText = attributedString
+        setText(attributedString)
         adjustsFontForContentSizeCategory = true
     }
 }
