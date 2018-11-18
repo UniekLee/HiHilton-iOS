@@ -22,3 +22,9 @@ class GreetingViewController: UIViewController {
         }
     }
 }
+
+extension GreetingViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}

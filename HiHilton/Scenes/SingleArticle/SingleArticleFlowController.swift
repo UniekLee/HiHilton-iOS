@@ -112,3 +112,9 @@ extension SingleArticleFlowController: SingleArticleDelegate {
         present(controller, animated: true, completion: nil)
     }
 }
+
+extension SingleArticleFlowController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+}

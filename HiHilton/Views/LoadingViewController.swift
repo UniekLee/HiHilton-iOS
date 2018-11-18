@@ -11,5 +11,7 @@ class LoadingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadingText.text = "Loading"
+        loadingText.font = Font.forStyle(Style.loading)
+        loadingText.textColor = .harcourtsNavy
     }
 }

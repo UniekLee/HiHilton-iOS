@@ -22,6 +22,8 @@ extension Font {
 //}
 
 struct Style {
+    static let loading = UIFont.TextStyle.headline
+    
     struct ArticleList {
         static let largeTitle = UIFont.TextStyle.largeTitle
         static let smallTitle = UIFont.TextStyle.title3
