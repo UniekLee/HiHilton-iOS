@@ -13,7 +13,7 @@ struct NetworkRouter {
     #if DEBUG
     static let baseURLString = "http://localhost:8888/hilton"
     #else
-    static let baseURLString = "https://hilton.swiftetc.com"
+    static let baseURLString = "https://hilton.com"
     #endif
 
     static let baseRESTString = "/wp-json/wp/v2"
