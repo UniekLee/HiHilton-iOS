@@ -16,7 +16,6 @@
 		9B15941F2097635A00B8B923 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B15941E2097635A00B8B923 /* ArticleListModel.swift */; };
 		9B1594212097689200B8B923 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1594202097689200B8B923 /* ArticleListViewModel.swift */; };
 		9B46506B2153C697008969AD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46506A2153C697008969AD /* DateFormatter.swift */; };
-		9B46506D2153CB04008969AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B46506C2153CB04008969AD /* GoogleService-Info.plist */; };
 		9B4650702153E7BB008969AD /* SingleArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46506F2153E7BB008969AD /* SingleArticleModel.swift */; };
 		9B465078215625F7008969AD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B465076215625F7008969AD /* ErrorViewController.swift */; };
 		9B465079215625F7008969AD /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B465077215625F7008969AD /* ErrorViewController.xib */; };
@@ -59,6 +58,7 @@
 		9BB1142F2144123100E6CD6A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1142E2144123100E6CD6A /* Media.swift */; };
 		9BB11431214413EE00E6CD6A /* ArticleMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB11430214413EE00E6CD6A /* ArticleMediaModel.swift */; };
 		9BB5730C2143C28100AB94C2 /* RawArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5730B2143C28100AB94C2 /* RawArticles.swift */; };
+		9BE5716C21B672EB00759261 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5716B21B672EB00759261 /* GoogleService-Info.plist */; };
 		9BF91E1E214AB56600B100F3 /* AppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */; };
 		9BF91E20214AB5BE00B100F3 /* ColourExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */; };
 		9BF91E24214AD7FC00B100F3 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF91E22214AD7FC00B100F3 /* ArticleTableViewCell.swift */; };
@@ -86,7 +86,6 @@
 		9B15941E2097635A00B8B923 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 		9B1594202097689200B8B923 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		9B46506A2153C697008969AD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		9B46506C2153CB04008969AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B46506F2153E7BB008969AD /* SingleArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArticleModel.swift; sourceTree = "<group>"; };
 		9B4650732153F412008969AD /* HiHilton.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiHilton.entitlements; sourceTree = "<group>"; };
 		9B465076215625F7008969AD /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		9BB1142E2144123100E6CD6A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		9BB11430214413EE00E6CD6A /* ArticleMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMediaModel.swift; sourceTree = "<group>"; };
 		9BB5730B2143C28100AB94C2 /* RawArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawArticles.swift; sourceTree = "<group>"; };
+		9BE5716B21B672EB00759261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BF91E1D214AB56600B100F3 /* AppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtensions.swift; sourceTree = "<group>"; };
 		9BF91E1F214AB5BE00B100F3 /* ColourExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourExtensions.swift; sourceTree = "<group>"; };
 		9BF91E22214AD7FC00B100F3 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				9BB114162143EAA400E6CD6A /* Extensions */,
 				9BA0D016219DE3FD0024273C /* Resources */,
 				9B1594002097239300B8B923 /* LaunchScreen.storyboard */,
-				9B46506C2153CB04008969AD /* GoogleService-Info.plist */,
+				9BE5716B21B672EB00759261 /* GoogleService-Info.plist */,
 				9B1594032097239300B8B923 /* Info.plist */,
 			);
 			path = HiHilton;
@@ -478,7 +478,6 @@
 				9BA0D02C219DE44C0024273C /* SourceSansPro-BoldItalic.ttf in Resources */,
 				9BA0D025219DE44C0024273C /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				9BA0D028219DE44C0024273C /* SourceSansPro-BlackItalic.ttf in Resources */,
-				9B46506D2153CB04008969AD /* GoogleService-Info.plist in Resources */,
 				9B1594022097239300B8B923 /* LaunchScreen.storyboard in Resources */,
 				9BA0D029219DE44C0024273C /* SourceSansPro-LightItalic.ttf in Resources */,
 				9BA0D026219DE44C0024273C /* SourceSansPro-Black.ttf in Resources */,
@@ -492,6 +491,7 @@
 				9BF91E25214AD7FC00B100F3 /* ArticleTableViewCell.xib in Resources */,
 				9B465079215625F7008969AD /* ErrorViewController.xib in Resources */,
 				9BA0D02B219DE44C0024273C /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				9BE5716C21B672EB00759261 /* GoogleService-Info.plist in Resources */,
 				9BB1142B2144086A00E6CD6A /* SingleArticleViewController.xib in Resources */,
 				9BB1141D2143EB0C00E6CD6A /* LoadingViewController.xib in Resources */,
 			);
