@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorViewController" customModule="HiHilton" customModuleProvider="target">
             <connections>
+                <outlet property="errorDetailsLabel" destination="duW-4y-IKo" id="N6Z-4B-oLm"/>
+                <outlet property="tryAgainButton" destination="yyP-If-jjL" id="NV0-rg-wtH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,17 +28,17 @@
                         <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="JV2-59-IMH">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bye :(" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihU-Zd-l9x">
-                                    <rect key="frame" x="89" y="0.0" width="197" height="91"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh no!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihU-Zd-l9x">
+                                    <rect key="frame" x="73" y="0.0" width="229" height="91"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="76"/>
                                     <color key="textColor" red="0.0" green="0.16862745098039217" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLK-B2-Nh4">
-                                    <rect key="frame" x="93" y="79" width="42" height="8"/>
+                                    <rect key="frame" x="77" y="79" width="50" height="8"/>
                                     <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="42" id="2wx-rh-kUu"/>
+                                        <constraint firstAttribute="width" constant="50" id="2wx-rh-kUu"/>
                                         <constraint firstAttribute="height" constant="8" id="t9U-z7-QVi"/>
                                     </constraints>
                                 </view>

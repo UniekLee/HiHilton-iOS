@@ -24,6 +24,11 @@ extension Font {
 struct Style {
     static let loading = UIFont.TextStyle.headline
     
+    struct ErrorScreen {
+        static let errorDetails = UIFont.TextStyle.body
+        static let tryAgainButton = UIFont.TextStyle.headline
+    }
+    
     struct ArticleList {
         static let largeTitle = UIFont.TextStyle.largeTitle
         static let smallTitle = UIFont.TextStyle.title3
@@ -47,6 +52,12 @@ extension UILabel {
     func setTextStyle(as style: UIFont.TextStyle) {
         font = Font.provider.scaledFont.font(forTextStyle: style)
         adjustsFontForContentSizeCategory = true
+    }
+}
+
+extension UIButton {
+    func setTextStyle(as style: UIFont.TextStyle) {
+        titleLabel?.setTextStyle(as: style)
     }
 }
 
