@@ -67,7 +67,7 @@ extension AppDelegate {
     func handleDynamic(link: DynamicLink) {
         if let url = link.url {
             let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-            if components?.host == "hilton.swiftetc.com" {
+            if components?.host == NetworkRouter.host {
                 guard
                     let postType = components?.queryItems?.filter({ $0.name == "post_type"}).first?.value,
                     postType == "articles",

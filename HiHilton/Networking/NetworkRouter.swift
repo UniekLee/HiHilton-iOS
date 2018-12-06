@@ -11,9 +11,11 @@ import Alamofire
 
 struct NetworkRouter {
     #if DEBUG
-    static let baseURLString = "http://localhost:8888/hilton"
+    static let scheme = "http"
+    static let host = "localhost:8888/hilton"
     #else
-    static let baseURLString = "https://hihilton.com"
+    static let scheme = "https"
+    static let host = "hihilton.com"
     #endif
 
     static let baseRESTString = "/wp-json/wp/v2"
@@ -28,8 +30,9 @@ protocol NetworkRoutable {
 
 extension URLRequestConvertible where Self: NetworkRoutable {
     func asURLRequest() throws -> URLRequest {
-        guard var urlComponents = URLComponents(string: NetworkRouter.baseURLString) else {
-            let baseURL = try NetworkRouter.baseURLString.asURL()
+        let baseURLString = "\(NetworkRouter.scheme)://\(NetworkRouter.host)"
+        guard var urlComponents = URLComponents(string: baseURLString) else {
+            let baseURL = try baseURLString.asURL()
             return URLRequest(url: baseURL)
         }
         urlComponents.path = urlComponents.path
