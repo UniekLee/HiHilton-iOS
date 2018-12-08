@@ -8,6 +8,8 @@
 
 import FirebaseAnalytics
 import SafariServices
+import Firebase
+import PKHUD
 
 protocol SingleArticleFlow: AnyObject {
     func returningFrom(flowController: SingleArticleFlowController)
@@ -33,6 +35,7 @@ class SingleArticleFlowController: FlowController {
         title = nil
         navigationItem.largeTitleDisplayMode = .never
         display(LoadingViewController())
+        setUpNavigationItem()
         getArticleDetails()
     }
     
@@ -41,6 +44,58 @@ class SingleArticleFlowController: FlowController {
         if parent == nil {
             delegate?.returningFrom(flowController: self)
         }
+    }
+}
+
+extension SingleArticleFlowController {
+    func setUpNavigationItem() {
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(userDidTapShareButton(_:)))
+        navigationItem.rightBarButtonItem = shareButton
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
+    @objc func userDidTapShareButton(_ button: UIBarButtonItem) {
+        guard let link = linkForArticle else { return }
+        let linkBuilder = DynamicLinkComponents(link: link, domain: "hihilton.page.link")
+        linkBuilder.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.hihilton.HiHilton")
+        
+        HUD.show(.labeledProgress(title: nil, subtitle: "Preparing link..."))
+        linkBuilder.shorten() { [weak self] url, warnings, error in
+            HUD.hide()
+            guard let url = url, error == nil else { return }
+            let text = "Check out this article on HiHilton."
+            self?.displayShareSheet(with: [text, url])
+        }
+    }
+    
+    func displayShareSheet(with items: [Any]) {
+        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            controller.popoverPresentationController?.sourceView = view
+            controller.popoverPresentationController?.sourceRect = frameForShareSheet
+            controller.popoverPresentationController?.permittedArrowDirections = []
+        }
+        
+        present(controller, animated: true, completion: nil)
+    }
+    
+    var linkForArticle: URL? {
+        guard
+            let baseURL = URL(string: NetworkRouter.baseURLString),
+            let articleId = article?.id,
+            var linkComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
+            else { return nil }
+        
+        linkComponents.queryItems = [
+            URLQueryItem(name: "post_type", value: "articles"),
+            URLQueryItem(name: "p", value: "\(articleId)")
+        ]
+        return linkComponents.url
+    }
+    
+    var frameForShareSheet: CGRect {
+        return CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
     }
 }
 
@@ -79,6 +134,7 @@ extension SingleArticleFlowController {
             self?.reportEventDidView(article: article)
             let singleArticleVC = SingleArticleViewController(with: article, media: media, delegate: strongSelf)
             self?.transition(to: singleArticleVC)
+            self?.enableShareButton()
         }
     }
     
@@ -90,7 +146,12 @@ extension SingleArticleFlowController {
             }
             self?.article = article
             self?.getMedia(for: articleId)
+            self?.enableShareButton()
         }
+    }
+    
+    private func enableShareButton() {
+        navigationItem.rightBarButtonItem?.isEnabled = true
     }
 }
 

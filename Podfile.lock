@@ -85,6 +85,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PKHUD (5.2.0)
   - Protobuf (3.6.1)
   - Realm (3.11.1):
     - Realm/Headers (= 3.11.1)
@@ -102,6 +103,7 @@ DEPENDENCIES:
   - Firebase/DynamicLinks
   - Firebase/Messaging
   - Lightbox
+  - PKHUD (~> 5.0)
   - RealmSwift
   - TTTAttributedLabel
 
@@ -126,6 +128,7 @@ SPEC REPOS:
     - Imaginary
     - Lightbox
     - nanopb
+    - PKHUD
     - Protobuf
     - Realm
     - RealmSwift
@@ -151,11 +154,12 @@ SPEC CHECKSUMS:
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
   RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 247a6441d217f6627aa7c93dbdceb7c16f0a8e72
+PODFILE CHECKSUM: 7cc1bfe0b4e7f1dc432444e0bb6727e545d57487
 
 COCOAPODS: 1.5.3

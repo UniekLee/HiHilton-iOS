@@ -18,6 +18,9 @@ struct NetworkRouter {
     static let host = "hihilton.com"
     #endif
 
+    static var baseURLString: String {
+        return "\(NetworkRouter.scheme)://\(NetworkRouter.host)"
+    }
     static let baseRESTString = "/wp-json/wp/v2"
 }
 
@@ -30,9 +33,8 @@ protocol NetworkRoutable {
 
 extension URLRequestConvertible where Self: NetworkRoutable {
     func asURLRequest() throws -> URLRequest {
-        let baseURLString = "\(NetworkRouter.scheme)://\(NetworkRouter.host)"
-        guard var urlComponents = URLComponents(string: baseURLString) else {
-            let baseURL = try baseURLString.asURL()
+        guard var urlComponents = URLComponents(string: NetworkRouter.baseURLString) else {
+            let baseURL = try NetworkRouter.baseURLString.asURL()
             return URLRequest(url: baseURL)
         }
         urlComponents.path = urlComponents.path
