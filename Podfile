@@ -17,5 +17,6 @@ target 'HiHilton' do
   pod 'Fabric', '~> 1.7.11'
   pod 'Crashlytics', '~> 3.10.7'
   pod 'PKHUD', '~> 5.0'
+  pod 'BonMot'
 
 end
