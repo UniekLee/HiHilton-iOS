@@ -69,7 +69,7 @@ class SingleArticleViewController: UIViewController {
     func updateViewContent() {
         loadViewIfNeeded()
         titleLabel.text = article.title
-        contentLabel.htmlText = article.content
+        contentLabel.text = article.content?.htmlStringFormatted
         galleryCollectionView.reloadData()
         galleryContainerView.isHidden = media.count == 0
     }
