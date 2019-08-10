@@ -34,7 +34,11 @@ enum ArticlesRouter: URLRequestConvertible, NetworkRoutable {
     
     var queries: [URLQueryItem] {
         switch self {
-        case .listArticles, .getArticle:
+        case .listArticles:
+            return [
+                URLQueryItem(name: "per_page", value: "100")
+            ]
+        case .getArticle:
             return []
         case .getMedia(let articleId):
             return [

@@ -522,7 +522,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -555,7 +555,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiHilton/Pods-HiHilton-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B471B761A3A32215F68C98AD /* [CP] Check Pods Manifest.lock */ = {
